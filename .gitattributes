@@ -270,57 +270,57 @@
 *.SHADER text
 
 # Unity Yaml Text Assets
-# NOTE: if you want to use unity merge add: merge=unityyamlmerge
-*.meta -text diff
-*.META -text diff
-*.unity -text diff
-*.UNITY -text diff
-*.asset -text diff
-*.ASSET -text diff
-*.prefab -text diff
-*.PREFAB -text diff
-*.mat -text diff
-*.MAT -text diff
-*.anim -text diff
-*.ANIM -text diff
-*.controller -text diff
-*.CONTROLLER -text diff
-*.overridecontroller -text diff
-*.OVERRIDECONTROLLER -text diff
-*.overrideController -text diff
-*.physicmaterial -text diff
-*.PHYSICMATERIAL -text diff
-*.physicMaterial -text diff
-*.physicsmaterial2d -text diff
-*.physicsmaterial2D -text diff
-*.PHYSICSMATERIAL2D -text diff
-*.physicsMaterial2D -text diff
-*.playable -text diff
-*.PLAYABLE -text diff
-*.mask -text diff
-*.MASK -text diff
-*.brush -text diff
-*.BRUSH -text diff
-*.flare -text diff
-*.FLARE -text diff
-*.fontsettings -text diff
-*.FONTSETTINGS -text diff
-*.guiskin -text diff
-*.giparams -text diff
-*.GIPARAMS -text diff
-*.rendertexture -text diff
-*.RENDERTEXTURE -text diff
-*.renderTexture -text diff
-*.spriteatlas -text diff
-*.SPRITEATLAS -text diff
-*.terrainlayer -text diff
-*.TERRAINLAYER -text diff
-*.mixer -text diff
-*.MIXER -text diff
-*.shadervariants -text diff
-*.SHADERVARIANTS -text diff
-*.preset -text diff
-*.PRESET -text diff
+# NOTE: if you DO NOT want to use unity merge remove: merge=unityyamlmerge
+*.meta -text diff merge=unityyamlmerge
+*.META -text diff merge=unityyamlmerge
+*.unity -text diff merge=unityyamlmerge
+*.UNITY -text diff merge=unityyamlmerge
+*.asset -text diff merge=unityyamlmerge
+*.ASSET -text diff merge=unityyamlmerge
+*.prefab -text diff merge=unityyamlmerge
+*.PREFAB -text diff merge=unityyamlmerge
+*.mat -text diff merge=unityyamlmerge
+*.MAT -text diff merge=unityyamlmerge
+*.anim -text diff merge=unityyamlmerge
+*.ANIM -text diff merge=unityyamlmerge
+*.controller -text diff merge=unityyamlmerge
+*.CONTROLLER -text diff merge=unityyamlmerge
+*.overridecontroller -text diff merge=unityyamlmerge
+*.OVERRIDECONTROLLER -text diff merge=unityyamlmerge
+*.overrideController -text diff merge=unityyamlmerge
+*.physicmaterial -text diff merge=unityyamlmerge
+*.PHYSICMATERIAL -text diff merge=unityyamlmerge
+*.physicMaterial -text diff merge=unityyamlmerge
+*.physicsmaterial2d -text diff merge=unityyamlmerge
+*.physicsmaterial2D -text diff merge=unityyamlmerge
+*.PHYSICSMATERIAL2D -text diff merge=unityyamlmerge
+*.physicsMaterial2D -text diff merge=unityyamlmerge
+*.playable -text diff merge=unityyamlmerge
+*.PLAYABLE -text diff merge=unityyamlmerge
+*.mask -text diff merge=unityyamlmerge
+*.MASK -text diff merge=unityyamlmerge
+*.brush -text diff merge=unityyamlmerge
+*.BRUSH -text diff merge=unityyamlmerge
+*.flare -text diff merge=unityyamlmerge
+*.FLARE -text diff merge=unityyamlmerge
+*.fontsettings -text diff merge=unityyamlmerge
+*.FONTSETTINGS -text diff merge=unityyamlmerge
+*.guiskin -text diff merge=unityyamlmerge
+*.giparams -text diff merge=unityyamlmerge
+*.GIPARAMS -text diff merge=unityyamlmerge
+*.rendertexture -text diff merge=unityyamlmerge
+*.RENDERTEXTURE -text diff merge=unityyamlmerge
+*.renderTexture -text diff merge=unityyamlmerge
+*.spriteatlas -text diff merge=unityyamlmerge
+*.SPRITEATLAS -text diff merge=unityyamlmerge
+*.terrainlayer -text diff merge=unityyamlmerge
+*.TERRAINLAYER -text diff merge=unityyamlmerge
+*.mixer -text diff merge=unityyamlmerge
+*.MIXER -text diff merge=unityyamlmerge
+*.shadervariants -text diff merge=unityyamlmerge
+*.SHADERVARIANTS -text diff merge=unityyamlmerge
+*.preset -text diff merge=unityyamlmerge
+*.PRESET -text diff merge=unityyamlmerge
 
 # Unity Assembly Definition
 *.asmdef -text diff
