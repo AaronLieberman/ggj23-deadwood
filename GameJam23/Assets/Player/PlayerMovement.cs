@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    enum MovementState { Idle, Running, Jumping }
+    enum MovementState { Idle, Running, Jumping, Falling }
 
     [SerializeField] float JumpSpeed = 14;
     [SerializeField] float MovementSpeed = 6;
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (_rigidBody.velocity.y < -0.1f)
         {
-            _state = MovementState.Jumping;
+            _state = MovementState.Falling;
         }
 
         _animator.SetInteger("state", (int)_state);
