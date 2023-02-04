@@ -1,0 +1,65 @@
+{
+ "Version": 6,
+ "Enabled": true,
+ "Location": "wvs",
+ "Definition": "wvs-flows/build-unity|build_unity_windows|v6.2.x",
+ "ManualTrigger": "",
+ "ManualOnly": false,
+ "Branches": [],
+ "Changes": [],
+ "Variables": null,
+ "Name": "",
+ "Inputs": [
+  {
+   "Name": "WVS_UNITY_USER",
+   "Value": "$WVSUSR_UNITY_USER",
+   "Source": ""
+  },
+  {
+   "Name": "WVS_UNITY_PASS",
+   "Value": "$WVSUSR_UNITY_PASS",
+   "Source": ""
+  },
+  {
+   "Name": "WVS_UNITY_SERIAL",
+   "Value": "$WVSUSR_UNITY_SERIAL",
+   "Source": ""
+  },
+  {
+   "Name": "WVS_BUILD_NAME",
+   "Value": "$CI_JOB_NAME",
+   "Source": ""
+  },
+  {
+   "Name": "WVS_EXECUTE_METHOD",
+   "Value": "WVS.Utils.BuildCommand.BuildApplication",
+   "Source": ""
+  },
+  {
+   "Name": "WVS_BUILD_BASE_DIRECTORY",
+   "Value": "Builds",
+   "Source": ""
+  },
+  {
+   "Name": "BUILD_TARGET",
+   "Value": "StandaloneWindows64",
+   "Source": ""
+  },
+  {
+   "Name": "WVS_BUILD_TARGET_DIRECTORY",
+   "Value": "$BUILD_TARGET",
+   "Source": ""
+  },
+  {
+   "Name": "PROJECT_PATH",
+   "Value": ".",
+   "Source": ""
+  }
+ ],
+ "DisplayName": "build_unity_windows_1",
+ "Flavor": "",
+ "EngineVersion": "2021.3.17f1",
+ "EngineTargetPlatform": "windows",
+ "RequireExecMemoryGB": 0,
+ "RequireExecCores": 0
+}
