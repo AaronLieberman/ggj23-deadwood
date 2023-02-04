@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _animator = GetComponent<Animator>();
         _boxCollider = GetComponent<BoxCollider2D>();
+
+        Camera.main.GetComponent<CameraController>().Player = transform;
     }
 
     // Update is called once per frame
