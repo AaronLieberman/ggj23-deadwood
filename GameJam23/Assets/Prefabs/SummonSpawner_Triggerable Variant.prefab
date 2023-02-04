@@ -38,10 +38,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1093554035690863476, guid: ff109d530e847764fb4351fc25cceb65, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8973687467396843202, guid: ff109d530e847764fb4351fc25cceb65, type: 3}
       propertyPath: m_Name
-      value: SummonSpawner_Triggerable
+      value: SummonSpawner_Triggerable Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8973687467396843203, guid: ff109d530e847764fb4351fc25cceb65, type: 3}
+      propertyPath: DespawnOnActivate
+      value: 
+      objectReference: {fileID: 2665946464105006092}
     - target: {fileID: 8973687467396843203, guid: ff109d530e847764fb4351fc25cceb65, type: 3}
       propertyPath: Activate.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -114,7 +122,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1691176430975343168, guid: ff109d530e847764fb4351fc25cceb65, type: 3}
+    - {fileID: 4696673538237406796, guid: ff109d530e847764fb4351fc25cceb65, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ff109d530e847764fb4351fc25cceb65, type: 3}
 --- !u!4 &2665946464105006082 stripped
 Transform:

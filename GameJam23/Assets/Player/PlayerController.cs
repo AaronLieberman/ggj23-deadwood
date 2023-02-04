@@ -25,9 +25,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _animator = GetComponent<Animator>();
-        _boxCollider = GetComponent<BoxCollider2D>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        _animator = GetComponentInChildren<Animator>();
+        _boxCollider = GetComponentInChildren<BoxCollider2D>();
 
         Camera.main.GetComponent<CameraController>().Player = transform;
     }
@@ -118,7 +118,7 @@ public class PlayerController : MonoBehaviour
         _animator.SetInteger("state", (int)_state);
     }
 
-    bool IsOnGround()
+    public bool IsOnGround()
     {
         return Physics2D.BoxCast(_boxCollider.bounds.center, _boxCollider.bounds.size, 0, Vector2.down, 0.1f, JumpableGround);
     }

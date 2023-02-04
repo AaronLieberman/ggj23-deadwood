@@ -41,6 +41,9 @@ TagManager:
   - name: FarBackground
     uniqueID: 2382812189
     locked: 0
+  - name: Background
+    uniqueID: 3666106481
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
