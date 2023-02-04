@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
                     break;
             }
 
-            if (Input.GetButton("Activate") && isOnGround && _state == MovementState.Idle)
+            if (Input.GetButton("Activate") && isOnGround)
             {
                 _state = MovementState.Channelling;
             }
