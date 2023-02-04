@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    enum MovementState { Idle, Running, Jumping, Falling, Dashing }
+    enum MovementState { Idle, Running, Jumping, Falling, Dashing, Channelling }
 
     [SerializeField] float JumpSpeed = 14;
     [SerializeField] float MovementSpeed = 6;
@@ -38,10 +38,9 @@ public class PlayerController : MonoBehaviour
         // totally unnescessary to set this in code but simplifies setup for the time being
         _rigidBody.gravityScale = GravityScale;
 
-        float h = Input.GetAxisRaw("Horizontal");
         if (_state != MovementState.Dashing)
         {
-            _rigidBody.velocity = new Vector3(h * MovementSpeed, _rigidBody.velocity.y);
+            float h = Input.GetAxisRaw("Horizontal");
 
             if (h != 0)
             {
@@ -50,7 +49,22 @@ public class PlayerController : MonoBehaviour
 
             bool isOnGround = IsOnGround();
 
-            if (Input.GetButtonDown("Jump") && (isOnGround || !_usedDoubleJump))
+            // some states are persistent until they complete, otherwise, default to idle unless we have a better
+            // state to be in
+            switch (_state)
+            {
+                case MovementState.Dashing:
+                    break;
+                default:
+                    _state = MovementState.Idle;
+                    break;
+            }
+
+            if (Input.GetButton("Activate") && isOnGround && _state == MovementState.Idle)
+            {
+                _state = MovementState.Channelling;
+            }
+            else if (Input.GetButtonDown("Jump") && (isOnGround || !_usedDoubleJump))
             {
                 if (isOnGround)
                 {
@@ -65,7 +79,7 @@ public class PlayerController : MonoBehaviour
                     _state = MovementState.Dashing;
                 }
             }
-            else if (h != 0)
+            else if (Mathf.Abs(h) > 0.1f)
             {
                 _state = MovementState.Running;
             }
@@ -80,10 +94,19 @@ public class PlayerController : MonoBehaviour
                 {
                     _state = MovementState.Falling;
                 }
-                else
-                {
-                    _state = MovementState.Idle;
-                }
+            }
+
+            switch (_state)
+            {
+                case MovementState.Idle:
+                case MovementState.Jumping:
+                case MovementState.Running:
+                case MovementState.Falling:
+                    _rigidBody.velocity = new Vector3(h * MovementSpeed, _rigidBody.velocity.y);
+                    break;
+                case MovementState.Channelling:
+                    _rigidBody.velocity = new Vector3(0, _rigidBody.velocity.y);
+                    break;
             }
 
             if (isOnGround)
