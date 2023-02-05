@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7912375ca133f8e4da895f2f94ff06c5
+guid: 854e1f5055b9b5e40827e0178e62da02
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,28 +101,16 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player-run_0
+      name: hopper_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
+        width: 20
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -131,19 +119,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 978152e262acd73459ca3434fa262e26
-      internalID: -328179035
+      spriteID: d9917e0558df4874881a894d6bae1aa2
+      internalID: 762625474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player-run_1
+      name: hopper_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 20
         y: 0
-        width: 32
+        width: 20
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -152,19 +140,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8910648aa300b1f4b989e57f492d6517
-      internalID: -1255115751
+      spriteID: a625cf9d24f0f8e4faf2b86246f511b9
+      internalID: -1273959641
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player-run_2
+      name: hopper_2
       rect:
         serializedVersion: 2
-        x: 64
+        x: 40
         y: 0
-        width: 32
+        width: 20
         height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -173,8 +161,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d63deffde5eade14a8b38522ec9f642b
-      internalID: 463292579
+      spriteID: 3459d966c5b19ca47af7bf7948c04b45
+      internalID: 1545994236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hopper_3
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 0
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adbcb52b0bed764bbe159ce5c2105d3
+      internalID: 582095809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hopper_4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 20
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3cc0dad2d07ec94d968b3a2f463c35f
+      internalID: -1254279978
       vertices: []
       indices: 
       edges: []
@@ -190,9 +220,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player-run_0: -328179035
-      player-run_1: -1255115751
-      player-run_2: 463292579
+      hopper_3: 582095809
+      hopper_2: 1545994236
+      hopper_0: 762625474
+      hopper_1: -1273959641
+      hopper_4: -1254279978
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
