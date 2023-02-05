@@ -205,6 +205,13 @@
       },
       "url": "https://packages.unity.com"
     },
+    "io.wvs.utils.build": {
+      "version": "1.0.3",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://wvs.io/api/v4/projects/1949/packages/npm"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,
