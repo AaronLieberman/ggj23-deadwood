@@ -22,6 +22,8 @@ public class Triggerable : MonoBehaviour
     public Texture2D FilledTexture;
     public Texture2D UnfilledTexture;
 
+    public AudioClip SummonClip;
+
     public UnityEvent Activate;
 
     private void Update()
@@ -58,6 +60,7 @@ public class Triggerable : MonoBehaviour
     {
         _summoning = false;
         Activate?.Invoke();
+        AudioSource.PlayClipAtPoint(SummonClip, transform.position, 1.5f);
 
         if (DespawnOnActivate)
         {

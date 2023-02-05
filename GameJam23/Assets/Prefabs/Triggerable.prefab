@@ -195,6 +195,7 @@ MonoBehaviour:
   BarAnchorObject: {fileID: 3506115011862967073}
   FilledTexture: {fileID: 2800000, guid: 2feb153ad60c33745b66977bd25b3888, type: 3}
   UnfilledTexture: {fileID: 2800000, guid: 5e5631e76e9737f4291683ae5d2765b0, type: 3}
+  SummonClip: {fileID: 8300000, guid: f334f4efa0f60ca42aca3ec80758e396, type: 3}
   Activate:
     m_PersistentCalls:
       m_Calls: []

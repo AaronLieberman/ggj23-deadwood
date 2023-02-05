@@ -15,11 +15,20 @@ public class PlayerController : MonoBehaviour
 
     MovementState _state = MovementState.Idle;
     bool _usedDoubleJump = false;
+    bool _wasOnGround = false; // Used to track if we should play the landing sfx
+
+    [SerializeField] AudioClip JumpClip;
+    [SerializeField] AudioClip LandClip;
+    [SerializeField] List<AudioClip> DashClips;
+    [SerializeField] List<AudioClip> FootstepClips;
+    [SerializeField] float FootstepInterval = 0.15f;
+    float _footstepTimer = 0f;
 
     Rigidbody2D _rigidBody;
     SpriteRenderer _spriteRenderer;
     Animator _animator;
     BoxCollider2D _boxCollider;
+    AudioSource _audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +37,7 @@ public class PlayerController : MonoBehaviour
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _animator = GetComponentInChildren<Animator>();
         _boxCollider = GetComponentInChildren<BoxCollider2D>();
+        _audioSource = GetComponent<AudioSource>();
 
         Camera.main.GetComponent<CameraController>().Player = transform;
     }
@@ -49,6 +59,13 @@ public class PlayerController : MonoBehaviour
 
             bool isOnGround = IsOnGround();
 
+            if (isOnGround && !_wasOnGround)
+            {
+                _audioSource.PlayOneShot(LandClip);
+            }
+
+            _wasOnGround = isOnGround;
+
             // some states are persistent until they complete, otherwise, default to idle unless we have a better
             // state to be in
             switch (_state)
@@ -68,10 +85,12 @@ public class PlayerController : MonoBehaviour
             {
                 if (isOnGround)
                 {
+                    _audioSource.PlayOneShot(JumpClip);
                     _rigidBody.velocity = new Vector3(_rigidBody.velocity.x, JumpSpeed);
                 }
                 else
                 {
+                    _audioSource.PlayOneShot(DashClips[Random.Range(0,DashClips.Count-1)]);
                     _usedDoubleJump = true;
                     _rigidBody.velocity = new Vector3(
                         _rigidBody.velocity.x + (_spriteRenderer.flipX ? -DashSpeed : DashSpeed),
@@ -82,6 +101,11 @@ public class PlayerController : MonoBehaviour
             else if (Mathf.Abs(h) > 0.1f)
             {
                 _state = MovementState.Running;
+
+                if (isOnGround)
+                {
+                    PlayFootsteps();
+                }
             }
 
             if (_state != MovementState.Dashing)
@@ -116,6 +140,16 @@ public class PlayerController : MonoBehaviour
         }
 
         _animator.SetInteger("state", (int)_state);
+    }
+
+    void PlayFootsteps()
+    {
+        _footstepTimer += Time.deltaTime;
+        if (_footstepTimer >= FootstepInterval)
+        {
+            _footstepTimer = 0f;
+            _audioSource.PlayOneShot(FootstepClips[Random.Range(0, FootstepClips.Count - 1)],0.5f);
+        }
     }
 
     public bool IsOnGround()

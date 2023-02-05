@@ -6,6 +6,7 @@ public class SummoningRadius : MonoBehaviour
 {
     Collider2D _radius;
     SpriteRenderer _sprite;
+    AudioSource _audioSource;
 
     bool _isSummoning = false;
 
@@ -18,6 +19,9 @@ public class SummoningRadius : MonoBehaviour
         _radius = GetComponent<Collider2D>();
         _sprite = GetComponent<SpriteRenderer>();
         _sprite.enabled = false;
+
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.mute = true;
 
 
         Player = GetComponentInParent<PlayerController>();
@@ -45,6 +49,9 @@ public class SummoningRadius : MonoBehaviour
     {
         _isSummoning = true;
         _sprite.enabled = true;
+
+        _audioSource.mute = false;
+
         for (int i=0; i < targets.Count; i++)
         {
             targets[i].StartSummoning();
@@ -55,6 +62,8 @@ public class SummoningRadius : MonoBehaviour
     {
         _isSummoning = false;
         _sprite.enabled = false;
+
+        _audioSource.mute = true;
 
         for (int i = 0; i < targets.Count; i++)
         {
