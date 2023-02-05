@@ -317,17 +317,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fd60391f3487941a8b93324de42938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starterPrefab: {fileID: 6314410276868197558, guid: b8245444fa749014cb2353e57e43dcb9, type: 3}
+  starterPrefab: {fileID: 0}
   starterPrefabWidth: 24
   endingPrefab: {fileID: 6314410276868197558, guid: b8245444fa749014cb2353e57e43dcb9, type: 3}
   endingPrefabWidth: 24
-  terrainPrefab: {fileID: 6314410276868197558, guid: b8245444fa749014cb2353e57e43dcb9, type: 3}
+  terrainPrefab: {fileID: 9148608076566478569, guid: 05f4645ea51b0e84199201f9c21e7dc4, type: 3}
   groundHeight: 0
   groundWidth: 24
   groundChunks: 10
   platformPrefabs:
   - {fileID: 8804515848198323147, guid: 6797625902ebc4146a1a06a5926cef1b, type: 3}
-  platformWidths: 020000000400000006000000
+  platformWidths: 06000000
   buriedPrefabs:
   - {fileID: 2665946464105006092, guid: ac10a18717e32934993c7afb6bd9af34, type: 3}
   sceneryPrefabs:
@@ -338,7 +338,7 @@ MonoBehaviour:
   - {fileID: 8804515848198323147, guid: 37b5d736751badb4886607034522087d, type: 3}
   sceneryWidths: 0e00000004000000010000000100000001000000
   platformSpacing: 3
-  platformLayers: 6
+  platformLayers: 3
   platformsPerLayer: 20
   chanceBuriedPerPlatformTile: 5
   chanceBuriedPerGroundTile: 10
