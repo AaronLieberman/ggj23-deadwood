@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,32 +6,54 @@ using UnityEngine;
 public class EnemyDamageHandler : MonoBehaviour
 {
     [SerializeField]
-    private EnemyResources enemyResources;
+    EnemyResources enemyResources;
+    
     [SerializeField]
-    private List<string> interactionTags;
+    List<string> interactionTags;
+    
     [SerializeField]
-    private float damageCooldown = 5f;
-    private float timeSinceLastDamage;
-    private bool damageable = false;
+    float damageCooldown = 1.5f;
+
+    [SerializeField]
+    float knockBackDistance = 1;
+
+    [SerializeField]
+    float knockBackVelocity = 10;
+    
+    float lastDamagedTime = float.MinValue;
+
+    bool colliding;
+
+    public bool InHurtState { get; private set; }
 
     private void FixedUpdate()
     {
-        if (damageable && timeSinceLastDamage <= Time.time)
+        if (colliding && Time.time >= lastDamagedTime + damageCooldown)
         {
             enemyResources.Damage();
-            timeSinceLastDamage = Time.time + damageCooldown;
+            lastDamagedTime = Time.time;
         }
+
+        InHurtState = Time.time < lastDamagedTime + damageCooldown;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (interactionTags.Contains(collision.tag))
-            damageable = true;
+        if (!interactionTags.Contains(collision.tag)) return;
+        
+        colliding = true;
+
+        Vector3 collisionDir = collision.transform.position - transform.position;
+        Vector3 impulseDir = new Vector3(-collisionDir.x, 0.2f, 3).normalized;
+
+        transform.parent.position += impulseDir * knockBackDistance;
+        transform.parent.GetComponentInChildren<Rigidbody2D>().velocity = impulseDir * knockBackVelocity;
+        InHurtState = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (interactionTags.Contains(collision.tag))
-            damageable = false;
+            colliding = false;
     }
 }

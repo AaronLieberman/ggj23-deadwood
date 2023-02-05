@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 3949820749660825897}
   - component: {fileID: 3949820749660825898}
   - component: {fileID: 1732518548}
+  - component: {fileID: 1285358946}
   m_Layer: 7
   m_Name: GroundedEdgeAwarePlayerSeekingAI
   m_TagString: Enemy
@@ -341,3 +342,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 5
+--- !u!114 &1285358946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3949820749660825899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431c4601695c7544cb3403e853d1899e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

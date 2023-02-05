@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122896095851524406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.32, z: 0}
+  m_LocalPosition: {x: 0, y: 5.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98,18 +98,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.13957119, y: -4.9373465}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 5}
+    oldSize: {x: 9, y: 11.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.744648, y: 1.6629639}
   m_EdgeRadius: 0
 --- !u!1 &1122896096696844050
 GameObject:
@@ -166,6 +166,7 @@ MonoBehaviour:
   BarAnchorObject: {fileID: 4878977565304834801}
   FilledTexture: {fileID: 2800000, guid: 2feb153ad60c33745b66977bd25b3888, type: 3}
   UnfilledTexture: {fileID: 2800000, guid: 5e5631e76e9737f4291683ae5d2765b0, type: 3}
+  SummonClip: {fileID: 0}
   Activate:
     m_PersistentCalls:
       m_Calls:
