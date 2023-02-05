@@ -25,6 +25,8 @@ public class AI : MonoBehaviour
 
     [SerializeField] private MoveType moveType;
 
+    [SerializeField] private string targetTag = string.Empty;
+
     private bool moveRight;
 
     [SerializeField]
@@ -220,8 +222,8 @@ public class AI : MonoBehaviour
 
     private void AttemptFindAndAttachPlayerGameObject()
     {
-        if (GameObject.FindGameObjectWithTag("Player") != null)
-            target = GameObject.FindGameObjectWithTag("Player").transform;
+        if (GameObject.FindGameObjectWithTag(targetTag) != null)
+            target = GameObject.FindGameObjectWithTag(targetTag).transform;
     }
 
     private void ForceEnemyRotate()
