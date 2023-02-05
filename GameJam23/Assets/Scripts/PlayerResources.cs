@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerResources : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class PlayerResources : MonoBehaviour
         get { return _health; }
         set
         {
-            _health = Mathf.Max(value, MaxHealth);
+            _health = Mathf.Clamp(value, 0, MaxHealth);
+            HealthChanged?.Invoke();
         }
     }
+
+    public UnityAction HealthChanged;
 
     public float MaxMana = 100f;
     private float _mana;
@@ -22,9 +26,12 @@ public class PlayerResources : MonoBehaviour
         get { return _mana; }
         set
         {
-            _mana = Mathf.Max(value, MaxMana);
+            _mana = Mathf.Clamp(value, 0, MaxMana);
+            ManaChanged?.Invoke();
         }
     }
+
+    public UnityAction ManaChanged;
 
     public static PlayerResources _instance;
     public static PlayerResources Instance => _instance;
@@ -38,5 +45,15 @@ public class PlayerResources : MonoBehaviour
     {
         Health = MaxHealth;
         Mana = MaxMana;
+    }
+
+    public void Damage(int amount=1)
+    {
+        Health -= amount;
+    }
+
+    private void OnGUI()
+    {
+        GUI.Label(new Rect(0, 0, 200, 200), $"HP: {Health} MP: {Mana}");
     }
 }
