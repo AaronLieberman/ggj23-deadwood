@@ -60,7 +60,8 @@ public class Triggerable : MonoBehaviour
     {
         _summoning = false;
         Activate?.Invoke();
-        AudioSource.PlayClipAtPoint(SummonClip, transform.position, 1.5f);
+        if (SummonClip != null)
+            AudioSource.PlayClipAtPoint(SummonClip, transform.position, 1.5f);
 
         if (DespawnOnActivate)
         {
