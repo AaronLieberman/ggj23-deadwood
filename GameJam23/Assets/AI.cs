@@ -32,7 +32,7 @@ public class AI : MonoBehaviour
     [SerializeField]
     private float rotationInterval;
 
-    enum MovementState { Idle, Jumping, Falling }
+    enum MovementState { Idle, Jumping, Falling, Move }
 
     Rigidbody2D _rigidBody;
     Animator _animator;
@@ -50,8 +50,9 @@ public class AI : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Vector3 prevPos = transform.position;
         MoveEnemy();
-        UpdateAnimation();
+        UpdateAnimation(transform.position != prevPos);
     }
 
     private void MoveEnemy()
@@ -298,24 +299,30 @@ public class AI : MonoBehaviour
         moveRight = !moveRight;
     }
 
-    void UpdateAnimation()
+    void UpdateAnimation(bool movedThisFrame)
     {
-        if (_rigidBody.velocity.y > 0.1f)
+        if (_animator == null) return;
+
+        if (moveType == MoveType.HOP)
         {
-            _state = MovementState.Jumping;
-        }
-        else if (_rigidBody.velocity.y < -0.1f)
-        {
-            _state = MovementState.Falling;
+            if (_rigidBody.velocity.y > 0.1f)
+            {
+                _state = MovementState.Jumping;
+            }
+            else if (_rigidBody.velocity.y < -0.1f)
+            {
+                _state = MovementState.Falling;
+            }
+            else
+            {
+                _state = MovementState.Idle;
+            }
         }
         else
         {
-            _state = MovementState.Idle;
+            _state = movedThisFrame || Mathf.Abs(_rigidBody.velocity.x) > 0.1f ? MovementState.Move : MovementState.Idle;
         }
 
-        if (_animator != null)
-        {
-            _animator.SetInteger("state", (int)_state);
-        }
+        _animator.SetInteger("state", (int)_state);
     }
 }
