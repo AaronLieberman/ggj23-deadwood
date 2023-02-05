@@ -53,10 +53,13 @@ MonoBehaviour:
   groundWidth: 24
   groundChunks: 10
   platformPrefabs:
+  - {fileID: 8804515848198323147, guid: 796e9b87434254c48b34e87b98fd4f3d, type: 3}
   - {fileID: 8804515848198323147, guid: 6797625902ebc4146a1a06a5926cef1b, type: 3}
-  platformWidths: 06000000
+  - {fileID: 8804515848198323147, guid: 3ff0b7ae5eeca454aae06157ef9a8e8d, type: 3}
+  platformWidths: 040000000600000008000000
   groundBuriedPrefabs:
   - {fileID: 2665946464105006092, guid: ac10a18717e32934993c7afb6bd9af34, type: 3}
+  summonTreePrefab: {fileID: 1122896096696844050, guid: f6a486e091fcbd346a18bc5a78fcf932, type: 3}
   platformBuriedPrefabs:
   - {fileID: 2665946464105006092, guid: ac10a18717e32934993c7afb6bd9af34, type: 3}
   sceneryPrefabs:
@@ -76,11 +79,16 @@ MonoBehaviour:
   platformSpacing: 3
   platformLayers: 3
   platformsPerLayer: 20
-  chanceBuriedPerPlatformTile: 5
+  chanceBuriedPerPlatformTile: 10
   chanceBuriedPerGroundTile: 10
-  flyingEnemyPrefabs: []
+  chanceofSummonTree: 2
+  flyingEnemyPrefabs:
+  - {fileID: 32080125439448090, guid: f9b04972a4665b84d94a65ee4b25f857, type: 3}
   avgFlyingEnemiesPerChunkStart: 0
-  avgFlyingEnemiesPerChunkEnd: 0
-  groundEnemyPrefabs: []
-  chanceGroundEnemyPerTileStart: 0
-  chanceGroundEnemyPerTileEnd: 0
+  avgFlyingEnemiesPerChunkEnd: 1
+  groundEnemyPrefabs:
+  - {fileID: 6819825626915250540, guid: 5255741f79aafdd43a54beda1fe3dfdb, type: 3}
+  - {fileID: 4622421855914835501, guid: b02ed1c1974d0924e94def102c33fd4c, type: 3}
+  - {fileID: 5633458600722788123, guid: 9ab4efc67b62143469864ddf7b94c94d, type: 3}
+  chanceGroundEnemyPerTileStart: 2
+  chanceGroundEnemyPerTileEnd: 10
