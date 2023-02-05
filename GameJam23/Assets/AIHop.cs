@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyHop : MonoBehaviour
+public class AIHop : MonoBehaviour
 {
     [SerializeField]
     private float jumpForce = 500f;
