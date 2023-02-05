@@ -122,6 +122,10 @@ public class TerrainGenerator : MonoBehaviour
             range += groundWidth;
             Instantiate(terrainPrefab, new Vector3(initOffset + range, 0, 0), Quaternion.identity);
         }
+        if (endingPrefab != null)
+        {
+            Instantiate(endingPrefab, new Vector3(initOffset + range, 0, 0), Quaternion.identity);
+        }
         range = rand.Next(3, 20);
         pSectionLength = groundChunks * groundWidth;
         if (sceneryPrefabs.Length > 0)
