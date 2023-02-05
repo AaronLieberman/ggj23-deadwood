@@ -58,7 +58,7 @@
  ],
  "DisplayName": "build_unity_windows_1",
  "Flavor": "",
- "EngineVersion": "2021.3.17f1",
+ "EngineVersion": "2021.3.1f1",
  "EngineTargetPlatform": "windows",
  "RequireExecMemoryGB": 0,
  "RequireExecCores": 0
