@@ -11,14 +11,26 @@ public class EnemyDamageHandler : MonoBehaviour
     [SerializeField]
     private float damageCooldown = 5f;
     private float timeSinceLastDamage;
+    private bool damageable = false;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void FixedUpdate()
     {
-        if (timeSinceLastDamage <= Time.time)
+        if (damageable && timeSinceLastDamage <= Time.time)
         {
-            if (interactionTags.Contains(collision.tag))
-                enemyResources.Damage();
+            enemyResources.Damage();
             timeSinceLastDamage = Time.time + damageCooldown;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (interactionTags.Contains(collision.tag))
+            damageable = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (interactionTags.Contains(collision.tag))
+            damageable = false;
     }
 }
