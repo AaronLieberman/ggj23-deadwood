@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 5899159858457410420}
   - component: {fileID: 979529037587126689}
   - component: {fileID: 8400241524706337185}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 3437655587109049004}
   - component: {fileID: -7720059147533124885}
   - component: {fileID: -8686459073108315432}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Summon_Skeleton
   m_TagString: Summon
   m_Icon: {fileID: 0}
