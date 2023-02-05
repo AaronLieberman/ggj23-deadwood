@@ -13,10 +13,13 @@ public class PlayerDamageHandler : MonoBehaviour
     private float timeSinceLastDamage;
     private bool damageable = false;
 
+    public bool InHurtState { get; private set; }
+
     private void FixedUpdate()
     {
         if (damageable && timeSinceLastDamage <= Time.time)
         {
+            StartCoroutine(ApplyHurt());
             playerResources.Damage();
             timeSinceLastDamage = Time.time + damageCooldown;
         }
@@ -32,5 +35,14 @@ public class PlayerDamageHandler : MonoBehaviour
     {
         if (interactionTags.Contains(collision.tag))
             damageable = false;
+    }
+
+    private IEnumerator ApplyHurt()
+    {
+        InHurtState = true;
+
+        yield return new WaitForSeconds(3f);
+
+        InHurtState = false;
     }
 }

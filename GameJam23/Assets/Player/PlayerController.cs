@@ -45,6 +45,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var damageHandler = GetComponentInChildren<PlayerDamageHandler>();
+        var spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        bool isInHurtState = damageHandler != null && damageHandler.InHurtState;
+
+        if (isInHurtState)
+        {
+            spriteRenderer.color = new Color(
+                1,
+                Mathf.PingPong(Time.time * 3, 1),
+                Mathf.PingPong(Time.time * 3, 1)
+            );
+        } else
+        {
+            spriteRenderer.color = new Color(
+                1,
+                1,
+                1
+            );
+        }
+
         // totally unnescessary to set this in code but simplifies setup for the time being
         _rigidBody.gravityScale = GravityScale;
 

@@ -108,7 +108,7 @@ public class TerrainGenerator : MonoBehaviour
                 {
                     Instantiate(groundBuriedPrefabs[rand.Next(0, groundBuriedPrefabs.Length)], new Vector3(initOffset + range - (groundWidth / 2) + j, groundHeight, 0), Quaternion.identity);
                 }
-                var interpChance = Math.Round(chanceGroundEnemyPerTileStart + (chanceGroundEnemyPerTileEnd - chanceGroundEnemyPerTileStart) * (range - groundWidth / 2.0 + j) / pSectionLength);
+                var interpChance = Math.Round(chanceGroundEnemyPerTileStart + (chanceGroundEnemyPerTileEnd - chanceGroundEnemyPerTileStart) * (range - groundWidth / 2.0 + j) / (groundWidth * groundChunks));
                 if (rand.Next(0, 100) < interpChance)
                 {
                     Instantiate(groundEnemyPrefabs[rand.Next(0, groundEnemyPrefabs.Length - 1)], new Vector3(initOffset + range - (groundWidth / 2) + j, groundHeight + 1, 0), Quaternion.identity);
