@@ -76,9 +76,9 @@ public class AI : MonoBehaviour
         if (isInHurtState)
         {
             _spriteRenderer.color = new Color(
-                _spriteRenderer.color.r * Mathf.PingPong(Time.time, 1),
-                _spriteRenderer.color.g,
-                _spriteRenderer.color.b);
+                _baseColor.r,
+                _baseColor.g * Mathf.PingPong(Time.time * 3, 1),
+                _baseColor.b * Mathf.PingPong(Time.time * 3, 1));
             return;
         }
 

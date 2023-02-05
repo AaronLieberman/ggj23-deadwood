@@ -14,6 +14,22 @@ public class SimpleSummonBehavior : MonoBehaviour
 
     void Update()
     {
+        var damageHandler = GetComponentInChildren<SummonDamageHandler>();
+        var spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        bool isInHurtState = damageHandler != null && damageHandler.InHurtState;
+
+        if (isInHurtState)
+        {
+            spriteRenderer.color = new Color(
+                1,
+                Mathf.PingPong(Time.time * 3, 1),
+                Mathf.PingPong(Time.time * 3, 1));
+            return;
+        }
+
+        GetComponentInChildren<SpriteRenderer>().color = Color.white;
+
         _rb.velocity = new Vector2(Speed, 0f); //TODO: Give it actual movement
     }
 }
