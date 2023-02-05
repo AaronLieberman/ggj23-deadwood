@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 5879983218455107023}
   - component: {fileID: 8544263905209100892}
   - component: {fileID: 1128636685}
+  - component: {fileID: 1263641265}
   m_Layer: 10
   m_Name: FlyingPlayerSeekingAI
   m_TagString: Enemy
@@ -276,3 +277,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 5
+--- !u!114 &1263641265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32080125439448090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431c4601695c7544cb3403e853d1899e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
