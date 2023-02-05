@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2426091301217644096}
   - component: {fileID: 8385879074024247940}
   m_Layer: 6
-  m_Name: Platform4x1
+  m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,10 +98,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -304377885
-  m_SortingLayer: 1
+  m_SortingLayerID: -628860815
+  m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: -16463966, guid: 7a1ec383c1d12b14e9ff83b8f76f4acd, type: 3}
+  m_Sprite: {fileID: 2057782527, guid: 7a1ec383c1d12b14e9ff83b8f76f4acd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

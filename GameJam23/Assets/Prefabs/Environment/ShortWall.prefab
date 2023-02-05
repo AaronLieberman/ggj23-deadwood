@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2248151714076645647}
   - component: {fileID: 154844365816864591}
   m_Layer: 6
-  m_Name: ShortWall
+  m_Name: GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: -304377885
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2110425213, guid: 7a1ec383c1d12b14e9ff83b8f76f4acd, type: 3}
+  m_Sprite: {fileID: 2057782527, guid: 7a1ec383c1d12b14e9ff83b8f76f4acd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

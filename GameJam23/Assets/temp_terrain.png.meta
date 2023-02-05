@@ -105,7 +105,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: terrain_0
+      name: temp_terrain_0
       rect:
         serializedVersion: 2
         x: 0
@@ -119,14 +119,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17ea2a9194b4c6e489ac9769f2c014b8
-      internalID: -2027369629
+      spriteID: 3f3a3d4b80cb6e1469b4aad5e6ff7f98
+      internalID: 1789379951
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain_1
+      name: temp_terrain_1
       rect:
         serializedVersion: 2
         x: 24
@@ -140,14 +140,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60bd9f6385250a24aba8e64a6f307272
-      internalID: -16463966
+      spriteID: cd71d5ff622144f4299fdca9de89a910
+      internalID: -4554691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain_2
+      name: temp_terrain_2
       rect:
         serializedVersion: 2
         x: 48
@@ -161,14 +161,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75223edbfbc21184ab523d393c332020
-      internalID: -1944184027
+      spriteID: fdd8a3c7c715a224095c36b6f633fbc4
+      internalID: 2092641464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: terrain_3
+      name: temp_terrain_3
       rect:
         serializedVersion: 2
         x: 72
@@ -182,8 +182,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6bc123e31e6c224419d9780072213e16
-      internalID: 2110425213
+      spriteID: 05c918742692a9c4c88dbc761790e438
+      internalID: 2057782527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: temp_terrain_4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe72f118abcfb0243b0b96f951927933
+      internalID: -1127684885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: temp_terrain_5
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2540b41bde166f40b4834df84b4bedc
+      internalID: -1937653159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: temp_terrain_6
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a8fe2f2c168a254caeb5361fd7d6f9d
+      internalID: 1567188183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: temp_terrain_7
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997fb59d877e0ea419552f2b46675be3
+      internalID: -201419252
       vertices: []
       indices: 
       edges: []
@@ -199,10 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      terrain_2: -1944184027
-      terrain_3: 2110425213
-      terrain_1: -16463966
-      terrain_0: -2027369629
+      temp_terrain_2: 2092641464
+      temp_terrain_4: -1127684885
+      temp_terrain_6: 1567188183
+      temp_terrain_1: -4554691
+      temp_terrain_3: 2057782527
+      temp_terrain_7: -201419252
+      temp_terrain_5: -1937653159
+      temp_terrain_0: 1789379951
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
