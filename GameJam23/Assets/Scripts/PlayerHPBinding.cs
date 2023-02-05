@@ -28,7 +28,7 @@ public class PlayerHPBinding : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire2"))
         {
-            PlayerResources.Instance.Damage(1);
+            //PlayerResources.Instance.Damage(1);
         }
     }
 

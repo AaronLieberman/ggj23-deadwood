@@ -65,7 +65,8 @@ MonoBehaviour:
   - {fileID: 8804515848198323147, guid: 8de267fb52044004491ebd7c6a0f0068, type: 3}
   - {fileID: 8804515848198323147, guid: 3a3244dc9a68ee04c9d8935c6f4e623d, type: 3}
   - {fileID: 8804515848198323147, guid: 37b5d736751badb4886607034522087d, type: 3}
-  backdropPrefabs: []
+  backdropPrefabs:
+  - {fileID: 3645545719355815933, guid: 780a7e48cf03eab48bff024bfc418bbe, type: 3}
   platformSpacing: 3
   platformLayers: 3
   platformsPerLayer: 20
