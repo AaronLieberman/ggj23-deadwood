@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 60892395d3463e44995cf1c5e0c67ed6
+guid: 2ba2d7ceb58a39a47b67658ffd7be0ca
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
   fontSize: 16
-  forceTextureCase: -2
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Bitmgothic
+  - Scream When You're Ready To Die
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 2
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 2ba2d7ceb58a39a47b67658ffd7be0ca
+guid: 20c10954d3ced5440baa30cd105c5c8f
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
   fontSize: 16
-  forceTextureCase: -2
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Scream When You're Ready To Die
+  - Pixel Pirate
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 2
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1

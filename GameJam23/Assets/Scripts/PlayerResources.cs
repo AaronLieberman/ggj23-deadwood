@@ -5,6 +5,8 @@ using UnityEngine.Events;
 
 public class PlayerResources : MonoBehaviour
 {
+    public bool isAlive => _health > 0;
+
     public int MaxHealth = 6;
     private int _health;
     public int Health
@@ -14,10 +16,15 @@ public class PlayerResources : MonoBehaviour
         {
             _health = Mathf.Clamp(value, 0, MaxHealth);
             HealthChanged?.Invoke();
+            if (_health <= 0)
+            {
+                Death?.Invoke();
+            }
         }
     }
 
     public UnityAction HealthChanged;
+    public UnityAction Death;
 
     public float MaxMana = 100f;
     private float _mana;

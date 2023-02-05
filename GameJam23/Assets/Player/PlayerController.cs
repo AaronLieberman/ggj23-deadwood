@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         // totally unnescessary to set this in code but simplifies setup for the time being
         _rigidBody.gravityScale = GravityScale;
 
-        if (_state != MovementState.Dashing)
+        if (PlayerResources.Instance.isAlive && _state != MovementState.Dashing)
         {
             float h = Input.GetAxisRaw("Horizontal");
 

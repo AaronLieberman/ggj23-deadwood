@@ -25,7 +25,7 @@ public class SummoningRadius : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButton("Activate") && Player.IsOnGround())
+        if (PlayerResources.Instance.isAlive && Input.GetButton("Activate") && Player.IsOnGround())
         {
             if (!_isSummoning)
             {

@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 626fac8e772c92d40bedcfd37312bbe3
+guid: 60892395d3463e44995cf1c5e0c67ed6
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
   fontSize: 16
-  forceTextureCase: -2
+  forceTextureCase: -1
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Yoster Island
+  - Bitmgothic
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 2
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
