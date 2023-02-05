@@ -67,7 +67,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Bodie Lee, \t\tArt\nVictor Erickson, \t\tProgramming\nJT Johnson, \t\tProgramming\nAaron
-    Lieberman, \tProgramming\nSara Fillman,\tConcept and Environment Art\nswish-swoosh.com\tAudio"
+    Lieberman, \tProgramming\nJames Vanderheiden, \tProgramming\nSara Fillman,\t\tArt\nswish-swoosh.com\tAudio"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4a85636ba9aa01943a5a040b354b9abe, type: 2}
   m_sharedMaterial: {fileID: -6075074542992275817, guid: 4a85636ba9aa01943a5a040b354b9abe, type: 2}
