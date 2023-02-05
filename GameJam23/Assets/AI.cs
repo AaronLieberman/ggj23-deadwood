@@ -32,8 +32,18 @@ public class AI : MonoBehaviour
     [SerializeField]
     private float rotationInterval;
 
+    enum MovementState { Idle, Moving }
+
+    Rigidbody2D _rigidBody;
+    Animator _animator;
+
+    MovementState _state = MovementState.Idle;
+
     private void Start()
     {
+        _rigidBody = GetComponent<Rigidbody2D>();
+        _animator = GetComponentInChildren<Animator>();
+
         if (moveType == MoveType.PATROL_INTERVAL_WALK)
             InvokeRepeating("ForceEnemyRotate", 0f, rotationInterval);
     }
@@ -241,5 +251,15 @@ public class AI : MonoBehaviour
     private void ForceEnemyRotate()
     {
         moveRight = !moveRight;
+    }
+
+    void Update()
+    {
+        _state = Mathf.Abs(_rigidBody.velocity.sqrMagnitude) > 0.1f ? MovementState.Moving : MovementState.Idle;
+
+        if (_animator != null)
+        {
+            _animator.SetInteger("state", (int)_state);
+        }
     }
 }

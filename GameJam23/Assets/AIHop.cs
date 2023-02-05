@@ -3,14 +3,14 @@ using UnityEngine;
 public class AIHop : MonoBehaviour
 {
     [SerializeField]
-    private float jumpForce = 500f;
+    float jumpForce = 500f;
 
-    private void Start()
+    void Start()
     {
         InvokeRepeating("ApplyJump", 0f, 2f);
     }
 
-    private void ApplyJump()
+    void ApplyJump()
     {
         GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, jumpForce));
     }
