@@ -6,18 +6,26 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     [SerializeField] float ParallaxEffect = 0;
-    private Vector2 _startPos;
-    private float _length;
+    Vector2 _startPos;
+    Vector2 _initialCameraPos;
+
+    bool _firstFrame = true;
 
     void Start()
     {
         _startPos = transform.position;
-        _length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
     void LateUpdate()
     {
-        Vector2 dist = Camera.main.transform.position * ParallaxEffect;
+        // do this the first frame because otherwise Player may not have been initialized yet
+        if (_firstFrame)
+        {
+            _initialCameraPos = Camera.main.transform.position;
+            _firstFrame = false;
+        }
+
+        Vector2 dist = (Camera.main.transform.position - new Vector3(_initialCameraPos.x, _initialCameraPos.y, 0)) * ParallaxEffect;
 
         transform.position = new Vector3(_startPos.x + dist.x, _startPos.y + dist.y, transform.position.z);
     }
