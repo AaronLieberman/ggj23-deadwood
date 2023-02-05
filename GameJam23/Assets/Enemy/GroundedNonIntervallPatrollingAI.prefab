@@ -288,7 +288,7 @@ MonoBehaviour:
   wallCheckRadius: 0
   whatIsWall:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 64
   edgeCheck: {fileID: 0}
   edgeCheckRadius: 0
   whatIsNonEdge:
@@ -346,7 +346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5633458602499379524}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0}
+  m_LocalPosition: {x: 1.5, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

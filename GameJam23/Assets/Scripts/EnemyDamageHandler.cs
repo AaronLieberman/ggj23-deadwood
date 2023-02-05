@@ -14,6 +14,12 @@ public class EnemyDamageHandler : MonoBehaviour
     [SerializeField]
     float damageCooldown = 1.5f;
 
+    [SerializeField]
+    float knockBackDistance = 1;
+
+    [SerializeField]
+    float knockBackVelocity = 10;
+    
     float lastDamagedTime = float.MinValue;
 
     bool colliding;
@@ -40,8 +46,8 @@ public class EnemyDamageHandler : MonoBehaviour
         Vector3 collisionDir = collision.transform.position - transform.position;
         Vector3 impulseDir = new Vector3(-collisionDir.x, 0.2f, 3).normalized;
 
-        transform.parent.position += impulseDir;
-        transform.parent.GetComponentInChildren<Rigidbody2D>().velocity = impulseDir * 10;
+        transform.parent.position += impulseDir * knockBackDistance;
+        transform.parent.GetComponentInChildren<Rigidbody2D>().velocity = impulseDir * knockBackVelocity;
         InHurtState = true;
     }
 
