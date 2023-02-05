@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c4fb04a1726d3a249b7f2fa287181ff4
+guid: bfc5324414acb8e479de35b16f8e3080
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player-jump_0
+      name: player-channel_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ced3b6d6179fa746a58c663b6f377d7
-      internalID: 1037940715
+      spriteID: b338ca4831e329b429738f349176f5cd
+      internalID: 1496302095
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player-jump_1
+      name: player-channel_1
       rect:
         serializedVersion: 2
         x: 32
@@ -152,8 +152,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e812c35556a8fe647b5fd63f16729d3d
-      internalID: 1153371489
+      spriteID: 4f51d692f91213346825059080245f67
+      internalID: -276541971
       vertices: []
       indices: 
       edges: []
@@ -169,8 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player-jump_1: 1153371489
-      player-jump_0: 1037940715
+      player-channel_1: -276541971
+      player-channel_0: 1496302095
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
