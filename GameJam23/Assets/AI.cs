@@ -257,6 +257,9 @@ public class AI : MonoBehaviour
     {
         _state = Mathf.Abs(_rigidBody.velocity.sqrMagnitude) > 0.1f ? MovementState.Moving : MovementState.Idle;
 
-        _animator.SetInteger("state", (int)_state);
+        if (_animator != null)
+        {
+            _animator.SetInteger("state", (int)_state);
+        }
     }
 }
