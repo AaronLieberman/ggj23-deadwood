@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public enum MoveType { SEEK_FLY, SEEK_WALK, SEEK_EDGE_AWARE_WALK, PATROL_INTERVAL_WALK, PATROL_NONINTERVAL_WALK }
+public enum MoveType { SEEK_FLY, SEEK_WALK, SEEK_EDGE_AWARE_WALK, PATROL_INTERVAL_WALK, PATROL_NONINTERVAL_WALK, HOP }
 
 public class AI : MonoBehaviour
 {
@@ -32,7 +32,7 @@ public class AI : MonoBehaviour
     [SerializeField]
     private float rotationInterval;
 
-    enum MovementState { Idle, Moving }
+    enum MovementState { Idle, Jumping, Falling }
 
     Rigidbody2D _rigidBody;
     Animator _animator;
@@ -51,6 +51,7 @@ public class AI : MonoBehaviour
     private void FixedUpdate()
     {
         MoveEnemy();
+        UpdateAnimation();
     }
 
     private void MoveEnemy()
@@ -68,6 +69,10 @@ public class AI : MonoBehaviour
         else if (moveType == MoveType.SEEK_WALK)
         {
             MoveSeekingWalkingEnemy();
+        }
+        else if (moveType == MoveType.HOP)
+        {
+            MoveHoppingEnemy();
         }
         else if (moveType == MoveType.PATROL_NONINTERVAL_WALK)
         {
@@ -149,6 +154,46 @@ public class AI : MonoBehaviour
                 transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
                 moveRight = false;
+            }
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
+            AttemptFindAndAttachPlayerGameObject();
+        }
+    }
+
+    private void MoveHoppingEnemy()
+    {
+        if (target != null)
+        {
+            if (Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y) > 0.1f)
+            {
+                var toTargetDist = Vector2.Distance(transform.position, target.position);
+
+                if (toTargetDist > agroDist && moveRight)
+                {
+                    transform.localScale = new Vector3(inverseScale * enemyScaleSize, enemyScaleSize, 1f);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
+                }
+                else if (toTargetDist > agroDist && !moveRight)
+                {
+                    transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
+                }
+
+                if (toTargetDist < agroDist && transform.position.x < target.position.x)
+                {
+                    transform.localScale = new Vector3(inverseScale * enemyScaleSize, enemyScaleSize, 1f);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
+                    moveRight = true;
+                }
+                else if (toTargetDist < agroDist && transform.position.x > target.position.x)
+                {
+                    transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
+                    GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
+                    moveRight = false;
+                }
             }
         }
         else
@@ -253,9 +298,20 @@ public class AI : MonoBehaviour
         moveRight = !moveRight;
     }
 
-    void Update()
+    void UpdateAnimation()
     {
-        _state = Mathf.Abs(_rigidBody.velocity.sqrMagnitude) > 0.1f ? MovementState.Moving : MovementState.Idle;
+        if (_rigidBody.velocity.y > 0.1f)
+        {
+            _state = MovementState.Jumping;
+        }
+        else if (_rigidBody.velocity.y < -0.1f)
+        {
+            _state = MovementState.Falling;
+        }
+        else
+        {
+            _state = MovementState.Idle;
+        }
 
         if (_animator != null)
         {
