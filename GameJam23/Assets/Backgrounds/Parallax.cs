@@ -15,7 +15,7 @@ public class Parallax : MonoBehaviour
         _length = GetComponent<SpriteRenderer>().bounds.size.x;
     }
 
-    void FixedUpdate()
+    void LateUpdate()
     {
         Vector2 dist = Camera.main.transform.position * ParallaxEffect;
 
