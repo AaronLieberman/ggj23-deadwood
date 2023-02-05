@@ -5,6 +5,7 @@ using UnityEngine;
 public class SummoningRadius : MonoBehaviour
 {
     Collider2D _radius;
+    SpriteRenderer _sprite;
 
     bool _isSummoning = false;
 
@@ -15,6 +16,10 @@ public class SummoningRadius : MonoBehaviour
     private void Awake()
     {
         _radius = GetComponent<Collider2D>();
+        _sprite = GetComponent<SpriteRenderer>();
+        _sprite.enabled = false;
+
+
         Player = GetComponentInParent<PlayerController>();
     }
 
@@ -29,22 +34,31 @@ public class SummoningRadius : MonoBehaviour
         }
         else
         {
-            _isSummoning = false;
-            for (int i=0; i< targets.Count; i++)
+            if (_isSummoning)
             {
-                targets[i].CancelSummoning();
+                StopSummoning();
             }
         }
-
-
     }
 
     void StartSummoning()
     {
         _isSummoning = true;
+        _sprite.enabled = true;
         for (int i=0; i < targets.Count; i++)
         {
             targets[i].StartSummoning();
+        }
+    }
+
+    void StopSummoning()
+    {
+        _isSummoning = false;
+        _sprite.enabled = false;
+
+        for (int i = 0; i < targets.Count; i++)
+        {
+            targets[i].CancelSummoning();
         }
     }
 
