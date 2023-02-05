@@ -223,7 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 595212329}
   - component: {fileID: 595212330}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: InteractionCollider
   m_TagString: Summon
   m_Icon: {fileID: 0}
@@ -434,7 +434,7 @@ GameObject:
   - component: {fileID: 1012853351}
   - component: {fileID: 1012853352}
   - component: {fileID: 1012853353}
-  m_Layer: 11
+  m_Layer: 13
   m_Name: InteractionCollider
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 1360653335}
   - component: {fileID: 1360653336}
   - component: {fileID: 1360653337}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: InteractionCollider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
