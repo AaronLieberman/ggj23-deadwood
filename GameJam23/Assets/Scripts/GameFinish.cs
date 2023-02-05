@@ -18,7 +18,7 @@ public class GameFinish : MonoBehaviour
 
     void ShowEndScreen()
     {
-        PlayerResources.Instance.Health = 0;
+        //PlayerResources.Instance.Health = 0;
         MainCanvas.enabled = true;
         animator.Play("Fade");
         StartCoroutine(QuitAfterFinish());
