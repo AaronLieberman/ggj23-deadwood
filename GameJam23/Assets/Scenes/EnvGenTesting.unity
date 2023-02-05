@@ -282,12 +282,20 @@ MonoBehaviour:
   groundHeight: -2.25
   groundWidth: 24
   groundChunks: 10
-  platformPresets:
-  - {fileID: 1848894096245737835, guid: 468310069a13ff64d835800538ba47e7, type: 3}
-  buriedPresets:
+  platformPrefabs:
+  - {fileID: 8804515848198323147, guid: 62aa9110fb069fe45be7572ffa6bf81a, type: 3}
+  - {fileID: 8804515848198323147, guid: 3a2a730eaf8e83e43b17ece5c920de9c, type: 3}
+  - {fileID: 8804515848198323147, guid: 76ffe6067cf4184489a1e6240e5405d9, type: 3}
+  platformWidths: 020000000400000006000000
+  buriedPrefabs:
   - {fileID: 2665946464105006092, guid: ac10a18717e32934993c7afb6bd9af34, type: 3}
+  sceneryPrefabs:
+  - {fileID: 8804515848198323147, guid: 8de267fb52044004491ebd7c6a0f0068, type: 3}
+  - {fileID: 8804515848198323147, guid: 3a3244dc9a68ee04c9d8935c6f4e623d, type: 3}
+  - {fileID: 8804515848198323147, guid: 37b5d736751badb4886607034522087d, type: 3}
+  sceneryWidths: 020000000400000001000000
   platformSpacing: 3
-  platformLayers: 4
+  platformLayers: 6
   platformsPerLayer: 20
   chanceBuriedPerPlatformTile: 5
   chanceBuriedPerGroundTile: 10
