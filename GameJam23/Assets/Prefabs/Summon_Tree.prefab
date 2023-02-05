@@ -296,6 +296,8 @@ GameObject:
   - component: {fileID: 5319928194384744345}
   - component: {fileID: 3437655587109049004}
   - component: {fileID: 1757304504}
+  - component: {fileID: 434445836}
+  - component: {fileID: 434445837}
   m_Layer: 7
   m_Name: Summon_Tree
   m_TagString: Summon
@@ -354,3 +356,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 10
+--- !u!114 &434445836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328552487722307527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb44c6152fe805b4f98ab3893fc3cb0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &434445837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7328552487722307527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fc6713c1403e9e43b316d0d2b298e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PrefabToSpawn: {fileID: 1122896096696844050, guid: f6a486e091fcbd346a18bc5a78fcf932, type: 3}
+  SpawnPoint: {fileID: 5319928194384744345}
