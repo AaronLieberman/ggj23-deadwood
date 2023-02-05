@@ -66,6 +66,6 @@ public class PlayerResources : MonoBehaviour
 
     private void OnGUI()
     {
-        GUI.Label(new Rect(0, 0, 200, 200), $"HP: {Health} MP: {Mana}");
+        //GUI.Label(new Rect(0, 0, 200, 200), $"HP: {Health} MP: {Mana}");
     }
 }
