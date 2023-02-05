@@ -75,6 +75,8 @@ MonoBehaviour:
   interactionTags:
   - Enemy
   damageCooldown: 0.75
+  knockBackDistance: 1
+  knockBackVelocity: 10
 --- !u!1 &5899159858457410421
 GameObject:
   m_ObjectHideFlags: 0
