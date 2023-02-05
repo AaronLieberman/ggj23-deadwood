@@ -30,10 +30,19 @@ public class TerrainGenerator : MonoBehaviour
     private int groundChunks;
     
     [SerializeField]
-    private Platform[] platformPresets;
+    private GameObject[] platformPrefabs;
 
     [SerializeField]
-    private GameObject[] buriedPresets;
+    private int[] platformWidths;
+
+    [SerializeField]
+    private GameObject[] buriedPrefabs;
+
+    [SerializeField]
+    private GameObject[] sceneryPrefabs;
+    
+    [SerializeField]
+    private int[] sceneryWidths;
 
     [SerializeField]
     private float platformSpacing;
@@ -71,20 +80,28 @@ public class TerrainGenerator : MonoBehaviour
         int initOffset = starterPrefabWidth / 2 + groundWidth / 2;
         Instantiate(terrainPrefab, new Vector3(initOffset, 0, 0), Quaternion.identity);
         int range = 0;
+        System.Random rand = new System.Random();
         for (int i = 0; i < groundChunks; ++i)
         {
-            System.Random rand = new System.Random();
             for(int j = 0; j < groundWidth; ++j)
             {
                 if(rand.Next(0, 100) < chanceBuriedPerGroundTile)
                 {
-                    Instantiate(buriedPresets[rand.Next(0, buriedPresets.Length)], new Vector3(initOffset + range - (groundWidth / 2) + j, groundHeight - 0.5f, 0), Quaternion.identity);
+                    Instantiate(buriedPrefabs[rand.Next(0, buriedPrefabs.Length)], new Vector3(initOffset + range - (groundWidth / 2) + j, groundHeight - 0.5f - rand.Next(0, 1), 0), Quaternion.identity);
                 }
             }
             range += groundWidth;
             Instantiate(terrainPrefab, new Vector3(initOffset + range, 0, 0), Quaternion.identity);
         }
+        range = rand.Next(3, 20);
         pSectionLength = groundChunks * groundWidth;
+        while (range < pSectionLength)
+        {
+            var i = rand.Next(0, sceneryPrefabs.Length);
+            Instantiate(sceneryPrefabs[i], new Vector3(initOffset + range + (sceneryWidths[i] / 2), groundHeight, 0), Quaternion.identity);
+            range += sceneryWidths[i];
+            range += rand.Next(3, 20);
+        }
     }
 
     struct PlatData
@@ -103,7 +120,9 @@ public class TerrainGenerator : MonoBehaviour
             {
                 //select platform type
                 System.Random rand = new System.Random();
-                var platform = platformPresets[rand.Next(0, platformPresets.Length)];
+                var pi = rand.Next(0, platformPrefabs.Length);
+                var platform = platformPrefabs[pi];
+                var platformWidth = platformWidths[pi];
                 bool collides;
                 bool stacks; //used to check if you can jump to it from the level below\
                 int center = 0;
@@ -113,31 +132,31 @@ public class TerrainGenerator : MonoBehaviour
                     ++tries;
                     collides = false;
                     stacks = (i == 0);
-                    center = rand.Next(platform.width / 2, pSectionLength - platform.width / 2);
+                    center = rand.Next(platformWidth / 2, pSectionLength - platformWidth / 2);
                     foreach (var p in platforms[i])
                     {
-                        if(Math.Abs(p.center - center) < (platform.width + p.width) / 2) collides = true;
+                        if(Math.Abs(p.center - center) < (platformWidth + p.width) / 2) collides = true;
                     }
                     if (i > 0)
                     {
                         foreach (var p in platforms[i - 1])
                         {
-                            if(Math.Abs(p.center - center) < (platform.width + p.width + 4) / 2) stacks = true; 
+                            if(Math.Abs(p.center - center) < (platformWidth + p.width + 4) / 2) stacks = true; 
                         }
                     }
                 } while ((collides || !stacks));
                 if (tries < 10)
                 {
                     PlatData plat = new PlatData();
-                    plat.width = platform.width;
+                    plat.width = platformWidth;
                     plat.center = center;
                     platforms[i].Add(plat);
                     Instantiate(platform, new Vector3(center + starterPrefabWidth / 2, groundHeight + platformSpacing * (1 + i), 0), Quaternion.identity);
-                    for (int k = 0; k < platform.width; ++k)
+                    for (int k = 0; k < platformWidth; ++k)
                     {
                         if (rand.Next(0, 100) < chanceBuriedPerPlatformTile)
                         {
-                            Instantiate(buriedPresets[rand.Next(0, buriedPresets.Length - 1)], new Vector3(center + (starterPrefabWidth / 2) - (platform.width / 2) + k, groundHeight + platformSpacing * (1 + i) - 0.5f, 0), Quaternion.identity);
+                            Instantiate(buriedPrefabs[rand.Next(0, buriedPrefabs.Length - 1)], new Vector3(center + (starterPrefabWidth / 2) - (platformWidth / 2) + k + 0.5f, groundHeight + platformSpacing * (1 + i) - 0.5f, 0), Quaternion.identity);
                         }
                     }
                 }
