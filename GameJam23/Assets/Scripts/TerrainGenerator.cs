@@ -39,6 +39,9 @@ public class TerrainGenerator : MonoBehaviour
     private GameObject[] groundBuriedPrefabs;
 
     [SerializeField]
+    private GameObject summonTreePrefab;
+
+    [SerializeField]
     private GameObject[] platformBuriedPrefabs;
 
     [SerializeField]
@@ -61,6 +64,9 @@ public class TerrainGenerator : MonoBehaviour
 
     [SerializeField]
     private int chanceBuriedPerGroundTile;
+
+    [SerializeField]
+    private int chanceofSummonTree;
 
     [SerializeField]
     private GameObject[] flyingEnemyPrefabs;
@@ -106,7 +112,11 @@ public class TerrainGenerator : MonoBehaviour
             {
                 if(rand.Next(0, 100) < chanceBuriedPerGroundTile)
                 {
-                    Instantiate(groundBuriedPrefabs[rand.Next(0, groundBuriedPrefabs.Length)], new Vector3(initOffset + range - (groundWidth / 2) + j, groundHeight + 0.75f, 0), Quaternion.identity);
+                    Instantiate(groundBuriedPrefabs[rand.Next(0, groundBuriedPrefabs.Length)], new Vector3(initOffset + range - (groundWidth / 2) + j, groundHeight, 0), Quaternion.identity);
+                }
+                if(rand.Next(0, 100) < chanceofSummonTree)
+                {
+                    Instantiate(summonTreePrefab, new Vector3(initOffset + range - (groundWidth / 2) + j, groundHeight, 0), Quaternion.identity);
                 }
                 var interpChance = Math.Round(chanceGroundEnemyPerTileStart + (chanceGroundEnemyPerTileEnd - chanceGroundEnemyPerTileStart) * (range - groundWidth / 2.0 + j) / (groundWidth * groundChunks));
                 if (rand.Next(0, 100) < interpChance)
@@ -205,7 +215,7 @@ public class TerrainGenerator : MonoBehaviour
                     {
                         if (rand.Next(0, 100) < chanceBuriedPerPlatformTile)
                         {
-                            Instantiate(platformBuriedPrefabs[rand.Next(0, platformBuriedPrefabs.Length - 1)], new Vector3(center + (starterPrefabWidth / 2) - (platformWidth / 2) + k + 0.5f, groundHeight + platformSpacing * (1 + i) + 0.75f, 0), Quaternion.identity);
+                            Instantiate(platformBuriedPrefabs[rand.Next(0, platformBuriedPrefabs.Length - 1)], new Vector3(center + (starterPrefabWidth / 2) - (platformWidth / 2) + k + 0.5f, groundHeight + platformSpacing * (1 + i), 0), Quaternion.identity);
                         }
                         var interpChance = Math.Round(chanceGroundEnemyPerTileStart + (chanceGroundEnemyPerTileEnd - chanceGroundEnemyPerTileStart) * center * 1.0 / pSectionLength);
                         if (rand.Next(0, 100) < interpChance)
