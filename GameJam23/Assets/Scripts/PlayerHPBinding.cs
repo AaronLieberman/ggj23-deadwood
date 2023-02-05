@@ -7,6 +7,8 @@ public class PlayerHPBinding : MonoBehaviour
 {
     public GameObject HeartPrefab;
 
+    public int HeartSize = 100;
+
     private List<HeartSpriteSwitch> hearts = new List<HeartSpriteSwitch>();
 
     private void Start()
@@ -19,7 +21,14 @@ public class PlayerHPBinding : MonoBehaviour
             var HeartObj = Instantiate(HeartPrefab, this.transform);
             hearts.Add(HeartObj.GetComponent<HeartSpriteSwitch>());
             var rectTransform = HeartObj.transform as RectTransform;
-            rectTransform.anchoredPosition = new Vector2(rectTransform.position.x + (96 + 12) * i, 0);
+            rectTransform.anchoredPosition = new Vector2(0 + HeartSize * i, 0);
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            PlayerResources.Instance.Damage(1);
         }
     }
 
