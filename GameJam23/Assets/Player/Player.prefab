@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494873966197869124}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3073898781993009780}
-  m_RootOrder: 0
+  m_Father: {fileID: 4489609810463111394}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3962899677627700979
 SpriteRenderer:
@@ -141,13 +141,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4219592620771811224}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 3073898781993009780}
-  m_RootOrder: 1
+  m_Father: {fileID: 4489609810463111394}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &8290660592720088132
 BoxCollider2D:
@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7224afa55f2269144941edabde9ccfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerResources: {fileID: 4993997931830876559}
+  playerResources: {fileID: 0}
   interactionTags:
   - Enemy
   damageCooldown: 0.75
@@ -200,6 +200,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4489609810463111394}
+  - component: {fileID: 4818521152236977242}
+  - component: {fileID: 3488434772372351773}
+  - component: {fileID: 6763019619301674921}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -220,9 +223,65 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3073898781993009780}
+  - {fileID: 1097709478095889533}
+  - {fileID: 7515704104636309235}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &4818521152236977242
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489609810463111392}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &3488434772372351773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489609810463111392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9683818c161070845902ab72db4a18a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JumpSpeed: 14
+  MovementSpeed: 6
+  DashSpeed: 16
+  GravityScale: 3
+  JumpableGround:
+    serializedVersion: 2
+    m_Bits: 320
+--- !u!114 &6763019619301674921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4489609810463111392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41666a73865fbf34b836a8091adccfaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 6
+  MaxMana: 100
 --- !u!1 &6363520422320024751
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,14 +291,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3073898781993009780}
-  - component: {fileID: 6267444380324266065}
-  - component: {fileID: 5588209813059654736}
   - component: {fileID: 2360315405029259163}
   - component: {fileID: 6770505699326268341}
   - component: {fileID: 8846807421404006102}
-  - component: {fileID: 4993997931830876559}
+  - component: {fileID: 7919049535354520581}
   m_Layer: 11
-  m_Name: Player
+  m_Name: GFX
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,52 +313,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1097709478095889533}
-  - {fileID: 7515704104636309235}
+  m_Children: []
   m_Father: {fileID: 4489609810463111394}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &6267444380324266065
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6363520422320024751}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!114 &5588209813059654736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6363520422320024751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9683818c161070845902ab72db4a18a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  JumpSpeed: 14
-  MovementSpeed: 6
-  DashSpeed: 16
-  GravityScale: 3
-  JumpableGround:
-    serializedVersion: 2
-    m_Bits: 320
 --- !u!95 &2360315405029259163
 Animator:
   serializedVersion: 5
@@ -400,7 +415,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.712409, y: 1.4940366}
   m_EdgeRadius: 0
---- !u!114 &4993997931830876559
+--- !u!114 &7919049535354520581
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -409,8 +424,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6363520422320024751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41666a73865fbf34b836a8091adccfaf, type: 3}
+  m_Script: {fileID: 11500000, guid: 79e37bf9ca59f7b499f10ac1a2736d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 6
-  MaxMana: 100
