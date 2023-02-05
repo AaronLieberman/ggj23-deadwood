@@ -80,12 +80,12 @@ MonoBehaviour:
   platformLayers: 3
   platformsPerLayer: 20
   chanceBuriedPerPlatformTile: 10
-  chanceBuriedPerGroundTile: 10
+  chanceBuriedPerGroundTile: 7
   chanceofSummonTree: 2
   flyingEnemyPrefabs:
   - {fileID: 32080125439448090, guid: f9b04972a4665b84d94a65ee4b25f857, type: 3}
   avgFlyingEnemiesPerChunkStart: 0
-  avgFlyingEnemiesPerChunkEnd: 1
+  avgFlyingEnemiesPerChunkEnd: 2
   groundEnemyPrefabs:
   - {fileID: 6819825626915250540, guid: 5255741f79aafdd43a54beda1fe3dfdb, type: 3}
   - {fileID: 4622421855914835501, guid: b02ed1c1974d0924e94def102c33fd4c, type: 3}
