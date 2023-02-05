@@ -40,9 +40,9 @@ public class TerrainGenerator : MonoBehaviour
 
     [SerializeField]
     private GameObject[] sceneryPrefabs;
-    
+
     [SerializeField]
-    private int[] sceneryWidths;
+    private GameObject[] backdropPrefabs;
 
     [SerializeField]
     private float platformSpacing;
@@ -91,7 +91,7 @@ public class TerrainGenerator : MonoBehaviour
             {
                 if(rand.Next(0, 100) < chanceBuriedPerGroundTile)
                 {
-                    Instantiate(buriedPrefabs[rand.Next(0, buriedPrefabs.Length)], new Vector3(initOffset + range - (groundWidth / 2) + j, groundHeight - 0.5f - rand.Next(0, 1), 0), Quaternion.identity);
+                    Instantiate(buriedPrefabs[rand.Next(0, buriedPrefabs.Length)], new Vector3(initOffset + range - (groundWidth / 2) + j, groundHeight, 0), Quaternion.identity);
                 }
             }
             range += groundWidth;
@@ -99,12 +99,28 @@ public class TerrainGenerator : MonoBehaviour
         }
         range = rand.Next(3, 20);
         pSectionLength = groundChunks * groundWidth;
-        while (range < pSectionLength)
+        if (sceneryPrefabs.Length > 0)
         {
-            var i = rand.Next(0, sceneryPrefabs.Length);
-            Instantiate(sceneryPrefabs[i], new Vector3(initOffset + range + (sceneryWidths[i] / 2), groundHeight, 0), Quaternion.identity);
-            range += sceneryWidths[i];
-            range += rand.Next(3, 20);
+            while (range < pSectionLength)
+            {
+                var i = rand.Next(0, sceneryPrefabs.Length);
+                Instantiate(sceneryPrefabs[i], new Vector3(initOffset + range, groundHeight, 0), Quaternion.identity);
+                Renderer render = sceneryPrefabs[i].GetComponentInChildren(typeof(Renderer)) as Renderer;
+                range += (int)Math.Round(render.bounds.size.x);
+                range += rand.Next(3, 20);
+            }
+        }
+        range = rand.Next(2, 5);
+        if (backdropPrefabs.Length > 0)
+        {
+            while (range < pSectionLength)
+            {
+                var i = rand.Next(0, backdropPrefabs.Length);
+                Instantiate(backdropPrefabs[i], new Vector3(initOffset + range, groundHeight, 0), Quaternion.identity);
+                Renderer render = backdropPrefabs[i].GetComponentInChildren(typeof(Renderer)) as Renderer;
+                range += (int)Math.Round(render.bounds.size.x);
+                range += rand.Next(2, 5);
+            }
         }
     }
 
@@ -160,7 +176,7 @@ public class TerrainGenerator : MonoBehaviour
                     {
                         if (rand.Next(0, 100) < chanceBuriedPerPlatformTile)
                         {
-                            Instantiate(buriedPrefabs[rand.Next(0, buriedPrefabs.Length - 1)], new Vector3(center + (starterPrefabWidth / 2) - (platformWidth / 2) + k + 0.5f, groundHeight + platformSpacing * (1 + i) - 0.5f, 0), Quaternion.identity);
+                            Instantiate(buriedPrefabs[rand.Next(0, buriedPrefabs.Length - 1)], new Vector3(center + (starterPrefabWidth / 2) - (platformWidth / 2) + k + 0.5f, groundHeight + platformSpacing * (1 + i), 0), Quaternion.identity);
                         }
                     }
                 }
