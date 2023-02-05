@@ -187,7 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7224afa55f2269144941edabde9ccfd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerResources: {fileID: 0}
+  playerResources: {fileID: 6763019619301674921}
   interactionTags:
   - Enemy
   damageCooldown: 0.75
