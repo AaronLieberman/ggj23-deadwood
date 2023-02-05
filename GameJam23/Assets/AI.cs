@@ -10,7 +10,7 @@ public class AI : MonoBehaviour
     [SerializeField] private float inverseScale = 1;
     [SerializeField] private float altInverseScale = -1;
 
-    [SerializeField] private Transform target;
+    private Transform target;
     [SerializeField] private float agroDist;
 
     [SerializeField] private Transform wallCheck;
@@ -223,7 +223,19 @@ public class AI : MonoBehaviour
     private void AttemptFindAndAttachPlayerGameObject()
     {
         if (GameObject.FindGameObjectWithTag(targetTag) != null)
-            target = GameObject.FindGameObjectWithTag(targetTag).transform;
+        {
+            GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(targetTag);
+            Transform closestTarget = null;
+            foreach(GameObject targetObject in targetObjects)
+            {
+                if (closestTarget == null)
+                    closestTarget = targetObject.transform;
+                else if (Vector2.Distance(transform.position, targetObject.transform.position) < Vector2.Distance(transform.position, closestTarget.position))
+                    closestTarget = targetObject.transform;
+            }
+            target = closestTarget;
+        }
+            
     }
 
     private void ForceEnemyRotate()
