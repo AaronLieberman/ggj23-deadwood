@@ -471,9 +471,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97fd60391f3487941a8b93324de42938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starterPrefab: {fileID: 0}
+  starterPrefab: {fileID: 9148608076566478569, guid: 05f4645ea51b0e84199201f9c21e7dc4, type: 3}
   starterPrefabWidth: 24
-  endingPrefab: {fileID: 6314410276868197558, guid: b8245444fa749014cb2353e57e43dcb9, type: 3}
+  endingPrefab: {fileID: 1172004473667151548, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
   endingPrefabWidth: 24
   terrainPrefab: {fileID: 9148608076566478569, guid: 05f4645ea51b0e84199201f9c21e7dc4, type: 3}
   groundHeight: 0
@@ -482,7 +482,9 @@ MonoBehaviour:
   platformPrefabs:
   - {fileID: 8804515848198323147, guid: 6797625902ebc4146a1a06a5926cef1b, type: 3}
   platformWidths: 06000000
-  buriedPrefabs:
+  groundBuriedPrefabs:
+  - {fileID: 2665946464105006092, guid: ac10a18717e32934993c7afb6bd9af34, type: 3}
+  platformBuriedPrefabs:
   - {fileID: 2665946464105006092, guid: ac10a18717e32934993c7afb6bd9af34, type: 3}
   sceneryPrefabs:
   - {fileID: 1571531923209109564, guid: e60ece90e9008274a9cbc857e68ec72b, type: 3}
@@ -496,8 +498,12 @@ MonoBehaviour:
   platformsPerLayer: 20
   chanceBuriedPerPlatformTile: 5
   chanceBuriedPerGroundTile: 10
-  avgEnemiesPerChunkStart: 0
-  avgEnemiesPerChunkEnd: 0
+  flyingEnemyPrefabs: []
+  avgFlyingEnemiesPerChunkStart: 0
+  avgFlyingEnemiesPerChunkEnd: 0
+  groundEnemyPrefabs: []
+  chanceGroundEnemyPerTileStart: 0
+  chanceGroundEnemyPerTileEnd: 0
 --- !u!4 &2131084469
 Transform:
   m_ObjectHideFlags: 0
