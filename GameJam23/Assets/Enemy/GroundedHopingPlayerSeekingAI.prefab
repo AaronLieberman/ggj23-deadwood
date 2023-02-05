@@ -220,6 +220,7 @@ GameObject:
   - component: {fileID: 6819825626915250522}
   - component: {fileID: 6819825626915250523}
   - component: {fileID: 826528374}
+  - component: {fileID: 483549011}
   m_Layer: 7
   m_Name: GroundedHopingPlayerSeekingAI
   m_TagString: Enemy
@@ -323,6 +324,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 5
+--- !u!114 &483549011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819825626915250540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 431c4601695c7544cb3403e853d1899e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6819825627125590912
 GameObject:
   m_ObjectHideFlags: 0
