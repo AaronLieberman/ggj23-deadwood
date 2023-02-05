@@ -13,6 +13,11 @@ public class CameraController : MonoBehaviour
     bool _firstFrame = true;
     float _initialY;
 
+    private void Start()
+    {
+        Screen.SetResolution(1920, 1080, true, 60);
+    }
+
     void Update()
     {
         // do this the first frame because otherwise Player may not have been initialized yet
