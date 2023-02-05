@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5513783420389334649}
   - component: {fileID: 2500466949200568471}
   - component: {fileID: 5210138066468585840}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ MonoBehaviour:
   GravityScale: 3
   JumpableGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
 --- !u!95 &5513783420389334649
 Animator:
   serializedVersion: 5
@@ -166,7 +166,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
