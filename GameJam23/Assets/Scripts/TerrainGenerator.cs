@@ -76,7 +76,11 @@ public class TerrainGenerator : MonoBehaviour
 
     void CreateGround()
     {
-        Instantiate(starterPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        if (starterPrefab != null)
+        {
+            Instantiate(starterPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+
         int initOffset = starterPrefabWidth / 2 + groundWidth / 2;
         Instantiate(terrainPrefab, new Vector3(initOffset, 0, 0), Quaternion.identity);
         int range = 0;
