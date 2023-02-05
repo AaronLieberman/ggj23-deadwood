@@ -67,12 +67,21 @@ public class Triggerable : MonoBehaviour
 
     private void OnGUI()
     {
+        if (!_summoning && _timer <= 0f)
+            return;
+
         Rect BarRect = new Rect(0,0,32,32);
         BarRect.width = 128f;
         BarRect.height = 48f;
         BarRect.center = Camera.main.WorldToScreenPoint(BarAnchorObject.transform.position);
         BarRect.y = Camera.main.scaledPixelHeight - BarRect.y;
-        GUI.DrawTexture(BarRect, UnfilledTexture);
+
+        Rect BGRect = BarRect;
+        BGRect.xMin++;
+        BGRect.xMax--;
+        BGRect.yMin++;
+        BGRect.yMax--;
+        GUI.DrawTexture(BGRect, UnfilledTexture);
 
         Rect FillRect = BarRect;
         FillRect.width = TimerPercentage * FillRect.width;

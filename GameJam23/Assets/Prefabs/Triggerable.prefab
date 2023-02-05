@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TimeToActivate: 1
-  TimerDecayPerSecond: 0.1
+  TimerDecayPerSecond: 0.5
   DespawnOnActivate: {fileID: 8973687467396843202}
   BarAnchorObject: {fileID: 3506115011862967073}
   FilledTexture: {fileID: 2800000, guid: 2feb153ad60c33745b66977bd25b3888, type: 3}
