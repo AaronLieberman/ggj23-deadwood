@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4489609810463111396}
   - component: {fileID: 4489609810463111395}
   - component: {fileID: 4489609810463111398}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ MonoBehaviour:
   GravityScale: 3
   JumpableGround:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
 --- !u!95 &4489609810463111398
 Animator:
   serializedVersion: 5
