@@ -32,10 +32,14 @@ public class AI : MonoBehaviour
     [SerializeField]
     private float rotationInterval;
 
-    enum MovementState { Idle, Jumping, Falling, Move }
+    enum MovementState { Idle, Jumping, Falling, Move, Hurt }
 
     Rigidbody2D _rigidBody;
     Animator _animator;
+    EnemyDamageHandler _enemyDamageHandler;
+    SpriteRenderer _spriteRenderer;
+    
+    Color _baseColor;
 
     MovementState _state = MovementState.Idle;
 
@@ -43,6 +47,10 @@ public class AI : MonoBehaviour
     {
         _rigidBody = GetComponent<Rigidbody2D>();
         _animator = GetComponentInChildren<Animator>();
+        _enemyDamageHandler = GetComponentInChildren<EnemyDamageHandler>();
+        _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        _baseColor = _spriteRenderer.color;
 
         if (moveType == MoveType.PATROL_INTERVAL_WALK)
             InvokeRepeating("ForceEnemyRotate", 0f, rotationInterval);
@@ -62,6 +70,19 @@ public class AI : MonoBehaviour
             altInverseScale = -inverseScale;
         else if (transform.localScale.x > 0f)
             altInverseScale = 1;
+
+        bool isInHurtState = _enemyDamageHandler != null && _enemyDamageHandler.InHurtState;
+
+        if (isInHurtState)
+        {
+            _spriteRenderer.color = new Color(
+                _spriteRenderer.color.r * Mathf.PingPong(Time.time, 1),
+                _spriteRenderer.color.g,
+                _spriteRenderer.color.b);
+            return;
+        }
+
+        _spriteRenderer.color = _baseColor;
 
         if (moveType == MoveType.SEEK_FLY)
         {

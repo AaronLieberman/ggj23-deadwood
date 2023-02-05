@@ -5,32 +5,47 @@ using UnityEngine;
 public class EnemyDamageHandler : MonoBehaviour
 {
     [SerializeField]
-    private EnemyResources enemyResources;
+    EnemyResources enemyResources;
+    
     [SerializeField]
-    private List<string> interactionTags;
+    List<string> interactionTags;
+    
     [SerializeField]
-    private float damageCooldown = 5f;
-    private float timeSinceLastDamage;
-    private bool damageable = false;
+    float damageCooldown = 1.5f;
+
+    float timeSinceLastDamage = float.MaxValue;
+
+    bool colliding;
+
+    public bool InHurtState { get; private set; }
 
     private void FixedUpdate()
     {
-        if (damageable && timeSinceLastDamage <= Time.time)
+        if (colliding && timeSinceLastDamage <= Time.time)
         {
             enemyResources.Damage();
             timeSinceLastDamage = Time.time + damageCooldown;
         }
+
+        InHurtState = timeSinceLastDamage <= Time.time;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (interactionTags.Contains(collision.tag))
-            damageable = true;
+        {
+            colliding = true;
+
+            Vector3 collisionDir = collision.transform.position - transform.position;
+            Vector3 impulseDir = new Vector3(-collisionDir.x, 0.1f, 0).normalized;
+
+            GetComponentInChildren<Rigidbody2D>().velocity = impulseDir * 5;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (interactionTags.Contains(collision.tag))
-            damageable = false;
+            colliding = false;
     }
 }
