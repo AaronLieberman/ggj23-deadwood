@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 595212329}
   - component: {fileID: 595212330}
+  - component: {fileID: 897617612}
   m_Layer: 15
   m_Name: InteractionCollider
   m_TagString: Summon
@@ -58,6 +59,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &897617612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595212328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0277fbf7d8d47274780ac9da95c3da1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  summonResources: {fileID: 2928801153312302834}
+  interactionTags:
+  - Enemy
+  damageCooldown: 0.75
 --- !u!1 &2928801152831199513
 GameObject:
   m_ObjectHideFlags: 0
@@ -186,6 +203,7 @@ GameObject:
   - component: {fileID: 2928801153529090123}
   - component: {fileID: 2928801153529090122}
   - component: {fileID: 2928801153529090121}
+  - component: {fileID: 2928801153312302834}
   m_Layer: 7
   m_Name: GroundedHoppingEnemySeekingAI
   m_TagString: Summon
@@ -292,3 +310,16 @@ MonoBehaviour:
   moveType: 1
   targetTag: Enemy
   rotationInterval: 0
+--- !u!114 &2928801153312302834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2928801153529090120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67113e7d2e202614aa82d5496d4f94e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 2
