@@ -123,63 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &468937915
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1172004473667151548, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_Name
-      value: Game Finish Trigger
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 121
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1172004473667151550, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
 --- !u!1001 &564565817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -718,38 +661,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3806835631179372939, guid: fc8398bfbcd91444fb73aacc4566b9d0, type: 3}
-      propertyPath: starterPrefab
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806835631179372939, guid: fc8398bfbcd91444fb73aacc4566b9d0, type: 3}
-      propertyPath: backdropPrefabs.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806835631179372939, guid: fc8398bfbcd91444fb73aacc4566b9d0, type: 3}
-      propertyPath: backdropPrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 1518537504497600219, guid: eb9578ba4eb84394cbeb291e32bf5148, type: 3}
-    - target: {fileID: 3806835631179372939, guid: fc8398bfbcd91444fb73aacc4566b9d0, type: 3}
-      propertyPath: backdropPrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 3570223449789002985, guid: 99c8fbca64f19ef4b8bb77865583bce5, type: 3}
-    - target: {fileID: 3806835631179372939, guid: fc8398bfbcd91444fb73aacc4566b9d0, type: 3}
-      propertyPath: backdropPrefabs.Array.data[3]
-      value: 
-      objectReference: {fileID: 6284114577857661012, guid: a816048044257d1459b718ce82389821, type: 3}
-    - target: {fileID: 3806835631179372939, guid: fc8398bfbcd91444fb73aacc4566b9d0, type: 3}
-      propertyPath: backdropPrefabs.Array.data[4]
-      value: 
-      objectReference: {fileID: 4961778333158176135, guid: b858054dcadb1f946875aaf3cbfe8b00, type: 3}
-    - target: {fileID: 3806835631179372939, guid: fc8398bfbcd91444fb73aacc4566b9d0, type: 3}
-      propertyPath: backdropPrefabs.Array.data[5]
-      value: 
-      objectReference: {fileID: 6853064524457146667, guid: 1a8d069538fb70b479d5910f2b796125, type: 3}
-    - target: {fileID: 3806835631179372939, guid: fc8398bfbcd91444fb73aacc4566b9d0, type: 3}
-      propertyPath: backdropPrefabs.Array.data[6]
-      value: 
-      objectReference: {fileID: 4699566096481909619, guid: f38b29740663add499085c95d8058b9b, type: 3}
     - target: {fileID: 3806835631179372940, guid: fc8398bfbcd91444fb73aacc4566b9d0, type: 3}
       propertyPath: m_Name
       value: Terrain Generator
