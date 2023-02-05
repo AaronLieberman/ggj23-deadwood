@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3806835631179372940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3806835631179372938}
+  - component: {fileID: 3806835631179372939}
+  m_Layer: 0
+  m_Name: Terrain Generator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3806835631179372938
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806835631179372940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3806835631179372939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3806835631179372940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97fd60391f3487941a8b93324de42938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starterPrefab: {fileID: 9148608076566478569, guid: 05f4645ea51b0e84199201f9c21e7dc4, type: 3}
+  starterPrefabWidth: 24
+  endingPrefab: {fileID: 1172004473667151548, guid: 4fdba0e06c389c249bb520726cdd4630, type: 3}
+  endingPrefabWidth: 24
+  terrainPrefab: {fileID: 9148608076566478569, guid: 05f4645ea51b0e84199201f9c21e7dc4, type: 3}
+  groundHeight: 0
+  groundWidth: 24
+  groundChunks: 10
+  platformPrefabs:
+  - {fileID: 8804515848198323147, guid: 6797625902ebc4146a1a06a5926cef1b, type: 3}
+  platformWidths: 06000000
+  groundBuriedPrefabs:
+  - {fileID: 2665946464105006092, guid: ac10a18717e32934993c7afb6bd9af34, type: 3}
+  platformBuriedPrefabs:
+  - {fileID: 2665946464105006092, guid: ac10a18717e32934993c7afb6bd9af34, type: 3}
+  sceneryPrefabs:
+  - {fileID: 1571531923209109564, guid: e60ece90e9008274a9cbc857e68ec72b, type: 3}
+  - {fileID: 8804515848198323147, guid: 68a7ea72e320180418d03e401f20e671, type: 3}
+  - {fileID: 8804515848198323147, guid: 8de267fb52044004491ebd7c6a0f0068, type: 3}
+  - {fileID: 8804515848198323147, guid: 3a3244dc9a68ee04c9d8935c6f4e623d, type: 3}
+  - {fileID: 8804515848198323147, guid: 37b5d736751badb4886607034522087d, type: 3}
+  backdropPrefabs: []
+  platformSpacing: 3
+  platformLayers: 3
+  platformsPerLayer: 20
+  chanceBuriedPerPlatformTile: 5
+  chanceBuriedPerGroundTile: 10
+  flyingEnemyPrefabs: []
+  avgFlyingEnemiesPerChunkStart: 0
+  avgFlyingEnemiesPerChunkEnd: 0
+  groundEnemyPrefabs: []
+  chanceGroundEnemyPerTileStart: 0
+  chanceGroundEnemyPerTileEnd: 0
