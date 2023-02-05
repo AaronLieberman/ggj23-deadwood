@@ -1,4 +1,13 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "WVS",
+      "url": "https://wvs.io/api/v4/projects/1949/packages/npm",
+      "scopes": [
+        "io.wvs"
+      ]
+    }
+  ],
   "dependencies": {
     "com.unity.collab-proxy": "2.0.0",
     "com.unity.feature.2d": "1.0.0",
@@ -10,6 +19,7 @@
     "com.unity.timeline": "1.6.4",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualscripting": "1.8.0",
+    "io.wvs.utils.build": "1.0.3",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
