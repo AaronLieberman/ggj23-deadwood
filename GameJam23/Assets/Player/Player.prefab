@@ -163,7 +163,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.019397497, y: -0.27819318}
+  m_Offset: {x: -0.019397497, y: -0.12607807}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -174,7 +174,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.712409, y: 1.4636136}
+  m_Size: {x: 0.712409, y: 1.4940366}
   m_EdgeRadius: 0
 --- !u!114 &2790188417375347935
 MonoBehaviour:
@@ -189,9 +189,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MaxHealth: 6
-  Health: 0
   MaxMana: 100
-  Mana: 0
 --- !u!1 &5518167527078176372
 GameObject:
   m_ObjectHideFlags: 0
