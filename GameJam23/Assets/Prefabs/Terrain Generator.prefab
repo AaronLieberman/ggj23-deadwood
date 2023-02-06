@@ -59,9 +59,11 @@ MonoBehaviour:
   platformWidths: 040000000600000008000000
   groundBuriedPrefabs:
   - {fileID: 2665946464105006092, guid: ac10a18717e32934993c7afb6bd9af34, type: 3}
+  - {fileID: 5675037367491374641, guid: d4e9f014c3c575846b07309bcffb421d, type: 3}
   summonTreePrefab: {fileID: 1122896096696844050, guid: f6a486e091fcbd346a18bc5a78fcf932, type: 3}
   platformBuriedPrefabs:
   - {fileID: 2665946464105006092, guid: ac10a18717e32934993c7afb6bd9af34, type: 3}
+  - {fileID: 5675037367491374641, guid: d4e9f014c3c575846b07309bcffb421d, type: 3}
   sceneryPrefabs:
   - {fileID: 1571531923209109564, guid: e60ece90e9008274a9cbc857e68ec72b, type: 3}
   - {fileID: 8804515848198323147, guid: 68a7ea72e320180418d03e401f20e671, type: 3}

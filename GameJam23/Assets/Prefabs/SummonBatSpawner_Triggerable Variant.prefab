@@ -293,7 +293,7 @@ GameObject:
   - component: {fileID: 7655715038726785038}
   - component: {fileID: 7655715038726785039}
   m_Layer: 0
-  m_Name: Buried_Skeleton
+  m_Name: Buried_Bird
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -355,7 +355,7 @@ SpriteRenderer:
   m_SortingLayerID: -304377885
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7d52c56864fc31c459f0e9df3f76183f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38eb5603acd6175458fbd8b9a2d056f8, type: 3}
   m_Color: {r: 0.6087485, g: 0.4527115, b: 0.6603774, a: 1}
   m_FlipX: 0
   m_FlipY: 0
