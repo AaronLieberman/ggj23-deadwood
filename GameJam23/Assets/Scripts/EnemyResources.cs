@@ -19,7 +19,7 @@ public class EnemyResources : MonoBehaviour
 
     public UnityAction HealthChanged;
 
-    private void Start()
+    private void Awake()
     {
         Health = MaxHealth;
     }
