@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 3128326238812167601}
   - component: {fileID: 3128326238812167606}
   m_Layer: 12
-  m_Name: SummonTree_Triggerable
+  m_Name: Summon_Tree_Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

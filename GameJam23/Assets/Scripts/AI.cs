@@ -11,7 +11,7 @@ public class AI : MonoBehaviour
     [SerializeField] private float altInverseScale = -1;
 
     private Transform target;
-    [SerializeField] private float agroDist;
+    [SerializeField] private float agroDist = 30;
 
     [SerializeField] private Transform wallCheck;
     [SerializeField] private float wallCheckRadius;
@@ -38,7 +38,7 @@ public class AI : MonoBehaviour
     Animator _animator;
     EnemyDamageHandler _enemyDamageHandler;
     SpriteRenderer _spriteRenderer;
-    
+
     Color _baseColor;
 
     MovementState _state = MovementState.Idle;
@@ -84,29 +84,36 @@ public class AI : MonoBehaviour
 
         _spriteRenderer.color = _baseColor;
 
-        if (moveType == MoveType.SEEK_FLY)
+        if (target == null)
         {
-            MoveSeekingFlyingEnemy();
+            AttemptFindAndAttachPlayerGameObject();
         }
-        else if (moveType == MoveType.SEEK_WALK)
+
+        if (target == null) return;
+
+        var toTargetDist = Vector2.Distance(transform.position, target.position);
+        if (toTargetDist > agroDist) return;
+        
+        switch (moveType)
         {
-            MoveSeekingWalkingEnemy();
-        }
-        else if (moveType == MoveType.HOP)
-        {
-            MoveHoppingEnemy();
-        }
-        else if (moveType == MoveType.PATROL_NONINTERVAL_WALK)
-        {
-            MovePatrolNonIntervalEnemy();
-        }
-        else if (moveType == MoveType.PATROL_INTERVAL_WALK)
-        {
-            MovePatrolIntervalEnemy();
-        }
-        else if (moveType == MoveType.SEEK_EDGE_AWARE_WALK)
-        {
-            MoveEdgeAwareSeekingWalkingEnemy();
+            case MoveType.SEEK_FLY:
+                MoveSeekingFlyingEnemy();
+                break;
+            case MoveType.SEEK_WALK:
+                MoveSeekingWalkingEnemy();
+                break;
+            case MoveType.HOP:
+                MoveHoppingEnemy();
+                break;
+            case MoveType.PATROL_NONINTERVAL_WALK:
+                MovePatrolNonIntervalEnemy();
+                break;
+            case MoveType.PATROL_INTERVAL_WALK:
+                MovePatrolIntervalEnemy();
+                break;
+            case MoveType.SEEK_EDGE_AWARE_WALK:
+                MoveEdgeAwareSeekingWalkingEnemy();
+                break;
         }
     }
 
@@ -114,25 +121,24 @@ public class AI : MonoBehaviour
     {
         if (target != null)
         {
-            var toTargetDist = Vector2.Distance(transform.position, target.position);
-
-            if (toTargetDist > agroDist && moveRight)
+            if (moveRight)
             {
                 transform.localScale = new Vector3(inverseScale * enemyScaleSize, enemyScaleSize, 1f);
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x + 1, transform.position.y), speed * Time.deltaTime);
             }
-            else if (toTargetDist > agroDist && !moveRight)
+            else if (!moveRight)
             {
                 transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x - 1, transform.position.y), speed * Time.deltaTime);
             }
-            if (toTargetDist < agroDist && transform.position.x < target.position.x)
+            
+            if (transform.position.x < target.position.x)
             {
                 transform.localScale = new Vector3(inverseScale * enemyScaleSize, enemyScaleSize, 1f);
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
                 moveRight = true;
             }
-            else if (toTargetDist < agroDist && transform.position.x > target.position.x)
+            else if (transform.position.x > target.position.x)
             {
                 transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
                 transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
@@ -153,25 +159,24 @@ public class AI : MonoBehaviour
 
         if (target != null)
         {
-            var toTargetDist = Vector2.Distance(transform.position, target.position);
-
-            if (toTargetDist > agroDist && moveRight)
+            if (moveRight)
             {
                 transform.localScale = new Vector3(inverseScale * enemyScaleSize, enemyScaleSize, 1f);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
             }
-            else if (toTargetDist > agroDist && !moveRight)
+            else if (!moveRight)
             {
                 transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
             }
-            if (toTargetDist < agroDist && transform.position.x < target.position.x)
+
+            if (transform.position.x < target.position.x)
             {
                 transform.localScale = new Vector3(inverseScale * enemyScaleSize, enemyScaleSize, 1f);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
                 moveRight = true;
             }
-            else if (toTargetDist < agroDist && transform.position.x > target.position.x)
+            else if (transform.position.x > target.position.x)
             {
                 transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
@@ -191,26 +196,24 @@ public class AI : MonoBehaviour
         {
             if (Mathf.Abs(GetComponent<Rigidbody2D>().velocity.y) > 0.1f)
             {
-                var toTargetDist = Vector2.Distance(transform.position, target.position);
-
-                if (toTargetDist > agroDist && moveRight)
+                if (moveRight)
                 {
                     transform.localScale = new Vector3(inverseScale * enemyScaleSize, enemyScaleSize, 1f);
                     GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
                 }
-                else if (toTargetDist > agroDist && !moveRight)
+                else if (!moveRight)
                 {
                     transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
                     GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
                 }
 
-                if (toTargetDist < agroDist && transform.position.x < target.position.x)
+                if (transform.position.x < target.position.x)
                 {
                     transform.localScale = new Vector3(inverseScale * enemyScaleSize, enemyScaleSize, 1f);
                     GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
                     moveRight = true;
                 }
-                else if (toTargetDist < agroDist && transform.position.x > target.position.x)
+                else if (transform.position.x > target.position.x)
                 {
                     transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
                     GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
@@ -229,25 +232,23 @@ public class AI : MonoBehaviour
     {
         if (target != null)
         {
-            var toTargetDist = Vector2.Distance(transform.position, target.position);
-
-            if (toTargetDist > agroDist && moveRight)
+            if (moveRight)
             {
                 transform.localScale = new Vector3(inverseScale * enemyScaleSize, enemyScaleSize, 1f);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
             }
-            else if (toTargetDist > agroDist && !moveRight)
+            else if (!moveRight)
             {
                 transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
             }
-            if (toTargetDist < agroDist && transform.position.x < target.position.x)
+            if (transform.position.x < target.position.x)
             {
                 transform.localScale = new Vector3(inverseScale * enemyScaleSize, enemyScaleSize, 1f);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(speed, GetComponent<Rigidbody2D>().velocity.y);
                 moveRight = true;
             }
-            else if (toTargetDist < agroDist && transform.position.x > target.position.x)
+            else if (transform.position.x > target.position.x)
             {
                 transform.localScale = new Vector3(inverseScale * -enemyScaleSize, enemyScaleSize, 1f);
                 GetComponent<Rigidbody2D>().velocity = new Vector2(-speed, GetComponent<Rigidbody2D>().velocity.y);
@@ -303,7 +304,7 @@ public class AI : MonoBehaviour
         {
             GameObject[] targetObjects = GameObject.FindGameObjectsWithTag(targetTag);
             Transform closestTarget = null;
-            foreach(GameObject targetObject in targetObjects)
+            foreach (GameObject targetObject in targetObjects)
             {
                 if (closestTarget == null)
                     closestTarget = targetObject.transform;
@@ -312,7 +313,7 @@ public class AI : MonoBehaviour
             }
             target = closestTarget;
         }
-            
+
     }
 
     private void ForceEnemyRotate()

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5675037367491374654}
   - component: {fileID: 7655715039495802005}
   m_Layer: 12
-  m_Name: SummonBatSpawner_Triggerable Variant
+  m_Name: Summon_Bat_Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

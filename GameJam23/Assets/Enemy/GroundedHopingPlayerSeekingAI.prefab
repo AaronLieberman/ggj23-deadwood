@@ -75,6 +75,8 @@ MonoBehaviour:
   interactionTags:
   - Summon
   damageCooldown: 0.75
+  knockBackDistance: 1
+  knockBackVelocity: 10
 --- !u!1 &1204554881523425039
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +299,7 @@ MonoBehaviour:
   enemyScaleSize: 1
   inverseScale: 1
   altInverseScale: -1
-  agroDist: 50
+  agroDist: 30
   wallCheck: {fileID: 6819825627125590913}
   wallCheckRadius: 0
   whatIsWall:
